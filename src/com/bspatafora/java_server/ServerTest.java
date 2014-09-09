@@ -1,26 +1,35 @@
 package com.bspatafora.java_server;
 
+import org.junit.Before;
 import org.junit.Test;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.Socket;
 
 import static org.junit.Assert.*;
 
 public class ServerTest {
+    Thread serverThread;
 
-    @Test
-    public void testStatusLineStatusCode() throws Exception {
-        Server server = new Server();
-        assertTrue("Status line contains a status code of 200", server.statusLine().contains("200"));
+    @Before
+    public void initialize() {
+        serverThread = new Thread(new Server(9000));
     }
 
     @Test
-    public void testStatusLineBlankLine() throws Exception {
-        Server server = new Server();
-        assertTrue("Status line ends with a blank line", server.statusLine().endsWith("\r\n\r\n"));
+    public void testServerGetRootStatusLine() throws Exception {
+        serverThread.start();
+        Socket testSocket = new Socket("localhost", 9000);
+        String response = StreamUtils.streamToString(testSocket.getInputStream());
+        assertTrue("Response starts with a status line of 'HTTP/1.1 200 OK'", response.startsWith("HTTP/1.1 200 OK"));
     }
 
     @Test
-    public void testBody() throws Exception {
-        Server server = new Server();
-        assertTrue("Body contains 'Hello, world!'", server.body().contains("Hello, world!"));
+    public void testServerGetRootBody() throws Exception {
+        serverThread.start();
+        Socket testSocket = new Socket("localhost", 9000);
+        String response = StreamUtils.streamToString(testSocket.getInputStream());
+        assertTrue("Response ends with a body consisting of string 'Hello, World!'", response.endsWith("Hello, world!"));
     }
 }
