@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Map argMap = CmdLineUtils.parseArgs(args);
+        Map argMap = CommandLine.parseArguments(args);
         Server server = new Server((Integer) argMap.get("port"));
         server.run();
     }

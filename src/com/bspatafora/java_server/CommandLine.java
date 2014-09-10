@@ -3,8 +3,8 @@ package com.bspatafora.java_server;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CmdLineUtils {
-    public static Map parseArgs(String[] args) {
+public class CommandLine {
+    public static Map parseArguments(String[] args) {
         Map<String, Object> argMap = new HashMap<>();
         if (args[0].equals("-p")) {
             argMap.put("port", Integer.parseInt(args[1]));

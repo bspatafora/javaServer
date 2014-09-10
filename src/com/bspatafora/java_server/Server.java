@@ -15,10 +15,9 @@ public class Server implements Runnable {
     }
 
     public void run() {
-        try (
-            ServerSocket serverSocket = new ServerSocket(port);
-            Socket clientSocket = serverSocket.accept();
-            PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+        try (ServerSocket serverSocket = new ServerSocket(port);
+             Socket clientSocket = serverSocket.accept();
+             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
         ) {
             out.write(statusLine());
             out.write(headers());
