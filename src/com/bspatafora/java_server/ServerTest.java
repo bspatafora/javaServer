@@ -16,7 +16,7 @@ public class ServerTest {
     }
 
     @Test
-    public void testServerGetRootStatusLine() throws Exception {
+    public void testGetRootStatusLine() throws Exception {
         serverThread.start();
         Socket testSocket = new Socket("localhost", 9000);
         String response = Stream.toString(testSocket.getInputStream());
@@ -24,7 +24,7 @@ public class ServerTest {
     }
 
     @Test
-    public void testServerGetRootBody() throws Exception {
+    public void testGetRootBody() throws Exception {
         serverThread.start();
         Socket testSocket = new Socket("localhost", 9000);
         String response = Stream.toString(testSocket.getInputStream());
