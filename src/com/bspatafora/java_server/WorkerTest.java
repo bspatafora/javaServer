@@ -3,22 +3,28 @@ package com.bspatafora.java_server;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.PrintWriter;
 import java.net.Socket;
 
 import static org.junit.Assert.*;
 
-public class ServerTest {
+public class WorkerTest {
     Thread serverThread;
+    String getRequest;
 
     @Before
     public void initialize() {
-        serverThread = new Thread(new Server(9000));
+        serverThread = new Thread(new Server(9000, false));
+        getRequest = "GET / HTTP/1.1";
     }
 
     @Test
     public void testGetRootStatusLine() throws Exception {
         serverThread.start();
         Socket testSocket = new Socket("localhost", 9000);
+        PrintWriter out = new PrintWriter(testSocket.getOutputStream(), true);
+        out.println(getRequest);
+
         String response = Stream.toString(testSocket.getInputStream());
         assertTrue("Response starts with a status line of 'HTTP/1.1 200 OK'", response.startsWith("HTTP/1.1 200 OK"));
     }
@@ -27,6 +33,9 @@ public class ServerTest {
     public void testGetRootBody() throws Exception {
         serverThread.start();
         Socket testSocket = new Socket("localhost", 9000);
+        PrintWriter out = new PrintWriter(testSocket.getOutputStream(), true);
+        out.println(getRequest);
+
         String response = Stream.toString(testSocket.getInputStream());
         assertTrue("Response ends with a body consisting of string 'Hello, World!'", response.endsWith("Hello, world!"));
     }
