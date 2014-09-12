@@ -15,14 +15,45 @@ public class Worker implements Runnable {
 
     public void run() {
         try (PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
-            if (in.readLine().startsWith("POST")) {
-                out.write(statusLine());
-                out.write("You made a POST request.");
+            int contentLength = 0;
+            StringBuilder requestBuilder = new StringBuilder();
+            String currentLine = in.readLine();
+            Boolean requestHasBody = isPost(currentLine) || isPut(currentLine);
+
+            requestBuilder.append(currentLine);
+            while ((currentLine = in.readLine()).length() > 0) {
+                requestBuilder.append(currentLine);
+                if (requestHasBody) {
+                    if (contentLengthHeader(currentLine)) {
+                        contentLength = parseContentLength(currentLine);
+                    }
+                }
+            }
+            String request = requestBuilder.toString();
+
+            StringBuilder rawBody = new StringBuilder();
+            if (requestHasBody) {
+                for (int i = 0; i < contentLength; i++) {
+                    rawBody.append((char) in.read());
+                }
+            }
+            String body = rawBody.toString();
+
+            String status200 = "HTTP/1.1 200 OK\r\n\r\n";
+            if (requestHasBody) {
+                Resources.form_resource = body;
+                out.write(status200);
+            } else if (request.contains("DELETE")) {
+                Resources.form_resource = "";
+                out.write(status200);
+            } else if (request.contains("/form")) {
+                out.write(status200);
+                out.write(Resources.form_resource);
             } else {
-                out.write(statusLine());
-                out.write(body());
+                out.write(status200);
+                out.write("Hello, world!");
             }
             out.flush();
         }
@@ -31,11 +62,19 @@ public class Worker implements Runnable {
         }
     }
 
-    private String statusLine() {
-        return "HTTP/1.1 200 OK" + "\r\n" + "\r\n";
+    private boolean isPut(String currentLine) {
+        return currentLine.startsWith("PUT");
     }
 
-    private String body() {
-        return "Hello, world!";
+    private boolean isPost(String currentLine) {
+        return currentLine.startsWith("POST");
+    }
+
+    private int parseContentLength(String currentLine) {
+        return Integer.parseInt((currentLine.substring(16)));
+    }
+
+    private boolean contentLengthHeader(String currentLine) {
+        return currentLine.startsWith("Content-Length: ");
     }
 }

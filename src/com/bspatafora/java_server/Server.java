@@ -13,7 +13,7 @@ public class Server implements Runnable {
     }
 
     public void run() {
-        try (ServerSocket serverSocket = new ServerSocket(port);
+        try (ServerSocket serverSocket = new ServerSocket(port)
         ) {
             while(infinite) {
                 new Thread(new Worker(serverSocket.accept())).start();

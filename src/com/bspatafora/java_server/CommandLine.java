@@ -7,20 +7,29 @@ public class CommandLine {
     public static Map parseArguments(String[] args) {
         Map<String, Object> argMap = new HashMap<>();
         try {
-            if (args[0].equals("-p")) {
-                argMap.put("port", Integer.parseInt(args[1]));
-                argMap.put("directory", args[3]);
-            } else if (args[0].equals("-d")) {
-                argMap.put("port", Integer.parseInt(args[3]));
-                argMap.put("directory", args[1]);
-            } else {
-                argMap.put("port", 5000);
-                argMap.put("directory", "/default/directory/");
+            switch (args[0]) {
+                case "-p":
+                    addArguments(argMap, Integer.parseInt(args[1]), args[3]);
+                    break;
+                case "-d":
+                    addArguments(argMap, Integer.parseInt(args[3]), args[1]);
+                    break;
+                default:
+                    addDefaultArguments(argMap);
             }
         } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-            argMap.put("port", 5000);
-            argMap.put("directory", "/default/directory/");
+            addDefaultArguments(argMap);
         }
+        return argMap;
+    }
+
+    private static Map addDefaultArguments(Map<String, Object> argMap) {
+        return addArguments(argMap, 5000, "/default/directory/");
+    }
+
+    private static Map addArguments(Map<String, Object> argMap, int port, String directory) {
+        argMap.put("port", port);
+        argMap.put("directory", directory);
         return argMap;
     }
 }
