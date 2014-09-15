@@ -13,7 +13,8 @@ public class WorkerTest {
     private static final String postForm = "POST /form HTTP/1.1\r\nContent-Length: 10\r\n\r\ndata=cosby\r\n";
     private static final String putForm = "PUT /form HTTP/1.1\r\nContent-Length: 15\r\n\r\ndata=heathcliff\r\n";
     private static final String getForm = "GET /form HTTP/1.1\r\n";
-    private static final String deleteFormRequest = "DELETE /form HTTP/1.1\r\n";
+    private static final String deleteForm = "DELETE /form HTTP/1.1\r\n";
+    private static final String getUnregistered = "GET /unregistered HTTP/1.1\r\n";
 
     @BeforeClass
     public static void startServer() {
@@ -82,7 +83,7 @@ public class WorkerTest {
 
         Socket deleteFormSocket = new Socket("localhost", 9000);
         PrintWriter deleteToServer = new PrintWriter(deleteFormSocket.getOutputStream(), true);
-        deleteToServer.println(deleteFormRequest);
+        deleteToServer.println(deleteForm);
 
         Socket getFormSocket2 = new Socket("localhost", 9000);
         PrintWriter getToServer2 = new PrintWriter(getFormSocket2.getOutputStream(), true);
@@ -90,5 +91,25 @@ public class WorkerTest {
 
         String getFormResponse2 = Stream.toString(getFormSocket2.getInputStream());
         assertFalse("Response to GET /form does not contain DELETEd PUT data", getFormResponse2.contains("data=heathcliff"));
+    }
+
+    @Test
+    public void getUnregisteredStatus() throws Exception {
+        Socket getRootSocket = new Socket("localhost", 9000);
+        PrintWriter toServer = new PrintWriter(getRootSocket.getOutputStream(), true);
+        toServer.println(getUnregistered);
+
+        String getRootResponse = Stream.toString(getRootSocket.getInputStream());
+        assertTrue("Response to GET /unregistered is '404 Not Found'", getRootResponse.contains("404 Not Found"));
+    }
+
+    @Test
+    public void getUnregisteredBody() throws Exception {
+        Socket getRootSocket = new Socket("localhost", 9000);
+        PrintWriter toServer = new PrintWriter(getRootSocket.getOutputStream(), true);
+        toServer.println(getUnregistered);
+
+        String getRootResponse = Stream.toString(getRootSocket.getInputStream());
+        assertTrue("Response to GET /unregistered has body 'Not found.'", getRootResponse.contains("Not found."));
     }
 }

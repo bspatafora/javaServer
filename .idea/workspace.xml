@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c612d7d8-8003-4cd7-9840-b8f94f9eee6f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLine.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLineTest.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLineTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Server.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Server.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLines.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLines.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Worker.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Worker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/WorkerTest.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/WorkerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -39,27 +37,17 @@
       <file leaf-file-name="Worker.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatusLines.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLines.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkerTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WorkerTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/WorkerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
+            <state vertical-scroll-proportion="0.110091746" vertical-offset="0" max-vertical-offset="1680">
               <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
               <folding />
             </state>
@@ -79,21 +67,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestFactoryTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactoryTest.java">
+      <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Request.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Request.java">
+      <file leaf-file-name="RequestFactoryTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -122,7 +110,6 @@
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLineTest.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Server.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/WorkerTest.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Headers.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Request.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactory.java" />
@@ -131,6 +118,7 @@
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Worker.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLines.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/WorkerTest.java" />
       </list>
     </option>
   </component>
@@ -293,7 +281,7 @@
       <recent name="com.bspatafora.java_server" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CommandLineTest">
+  <component name="RunManager" selected="JUnit.WorkerTest">
     <configuration default="false" name="WorkerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_server" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -344,28 +332,6 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="RequestFactoryTest.setRequestMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_server" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.bspatafora.java_server" />
-      <option name="MAIN_CLASS_NAME" value="com.bspatafora.java_server.RequestFactoryTest" />
-      <option name="METHOD_NAME" value="setRequestMethod" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="RequestFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_server" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -388,13 +354,35 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="RequestFactoryTest.initializeHeaders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="WorkerTest.getUnregisteredStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java_server" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.bspatafora.java_server" />
-      <option name="MAIN_CLASS_NAME" value="com.bspatafora.java_server.RequestFactoryTest" />
-      <option name="METHOD_NAME" value="initializeHeaders" />
+      <option name="MAIN_CLASS_NAME" value="com.bspatafora.java_server.WorkerTest" />
+      <option name="METHOD_NAME" value="getUnregisteredStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="WorkerTest.getUnregisteredBody" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java_server" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.bspatafora.java_server" />
+      <option name="MAIN_CLASS_NAME" value="com.bspatafora.java_server.WorkerTest" />
+      <option name="METHOD_NAME" value="getUnregisteredBody" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -516,17 +504,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.WorkerTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.CommandLineTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RequestFactoryTest.setRequestMethod" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RequestFactoryTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RequestFactoryTest.initializeHeaders" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RequestFactoryTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.WorkerTest.getUnregisteredStatus" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.WorkerTest.getUnregisteredBody" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CommandLineTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RequestFactoryTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.WorkerTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RequestFactoryTest.initializeHeaders" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RequestFactoryTest.setRequestMethod" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.WorkerTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.WorkerTest.getUnregisteredBody" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.WorkerTest.getUnregisteredStatus" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CommandLineTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RequestFactoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -563,7 +551,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12013889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3282532" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293011" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -927,14 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09090909" vertical-offset="0" max-vertical-offset="825">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
@@ -962,34 +942,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Request.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/WorkerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Worker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1005,10 +961,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLines.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Worker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/WorkerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.110091746" vertical-offset="0" max-vertical-offset="1680">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
           <folding />
         </state>
       </provider>

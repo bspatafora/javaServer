@@ -25,12 +25,15 @@ public class Worker implements Runnable {
                 Resources.form_resource = "";
             }
 
-            out.write(StatusLines.OK);
-            out.write("\r\n");
             if (request.route().equals(Routes.FORM)) {
+                out.write(StatusLines.OK + "\r\n");
                 out.write(Resources.form_resource);
-            } else {
+            } else if (request.route().equals(Routes.ROOT)) {
+                out.write(StatusLines.OK + "\r\n");
                 out.write("Hello, world!");
+            } else {
+                out.write(StatusLines.NOT_FOUND + "\r\n");
+                out.write("Not found.");
             }
             out.flush();
         }
