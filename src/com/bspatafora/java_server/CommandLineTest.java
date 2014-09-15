@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class CommandLineTest {
 
     @Test
-    public void testParseArgumentsPortFirst() throws Exception {
+    public void parseArgumentsPortFirst() throws Exception {
         String[] args = { "-p", "9000", "-d", "/some_directory/" };
         Map argMap = CommandLine.parseArguments(args);
         Integer port = (Integer) argMap.get("port");
@@ -19,7 +19,7 @@ public class CommandLineTest {
     }
 
     @Test
-    public void testParseArgumentsDirectoryFirst() throws Exception {
+    public void parseArgumentsDirectoryFirst() throws Exception {
         String[] args = { "-d", "/some_directory/", "-p", "9000" };
         Map argMap = CommandLine.parseArguments(args);
         Integer port = (Integer) argMap.get("port");
@@ -29,7 +29,7 @@ public class CommandLineTest {
     }
 
     @Test
-    public void testParseArgumentsMalformed() throws Exception {
+    public void parseArgumentsMalformed() throws Exception {
         String[] args = { "-r", "incorrect", "-g", "usage" };
         Map argMap = CommandLine.parseArguments(args);
         Integer port = (Integer) argMap.get("port");
@@ -39,7 +39,7 @@ public class CommandLineTest {
     }
 
     @Test
-    public void testParseArgumentsTooFew() throws Exception {
+    public void parseArgumentsTooFew() throws Exception {
         String[] args = { "-d", "/some_directory/" };
         Map argMap = CommandLine.parseArguments(args);
         Integer port = (Integer) argMap.get("port");
@@ -49,7 +49,7 @@ public class CommandLineTest {
     }
 
     @Test
-    public void testParseArgumentsPortInvalid() throws Exception {
+    public void parseArgumentsPortInvalid() throws Exception {
         String[] args = { "-p", "not_a_number", "-d", "/some_directory/" };
         Map argMap = CommandLine.parseArguments(args);
         Integer port = (Integer) argMap.get("port");

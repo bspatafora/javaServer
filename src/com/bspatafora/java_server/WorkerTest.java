@@ -9,19 +9,19 @@ import java.net.Socket;
 import static org.junit.Assert.*;
 
 public class WorkerTest {
-    static String getRoot = "GET / HTTP/1.1\r\n";
-    static String postForm = "POST /form HTTP/1.1\r\nContent-Length: 10\r\n\r\ndata=cosby\r\n";
-    static String putForm = "PUT /form HTTP/1.1\r\nContent-Length: 15\r\n\r\ndata=heathcliff\r\n";
-    static String getForm = "GET /form HTTP/1.1\r\n";
-    static String deleteFormRequest = "DELETE /form HTTP/1.1\r\n";
+    private static final String getRoot = "GET / HTTP/1.1\r\n";
+    private static final String postForm = "POST /form HTTP/1.1\r\nContent-Length: 10\r\n\r\ndata=cosby\r\n";
+    private static final String putForm = "PUT /form HTTP/1.1\r\nContent-Length: 15\r\n\r\ndata=heathcliff\r\n";
+    private static final String getForm = "GET /form HTTP/1.1\r\n";
+    private static final String deleteFormRequest = "DELETE /form HTTP/1.1\r\n";
 
     @BeforeClass
     public static void startServer() {
-        new Thread(new Server(9000, true)).start();
+        new Thread(new Server(9000)).start();
     }
 
     @Test
-    public void testGetRootStatus() throws Exception {
+    public void getRootStatus() throws Exception {
         Socket getRootSocket = new Socket("localhost", 9000);
         PrintWriter toServer = new PrintWriter(getRootSocket.getOutputStream(), true);
         toServer.println(getRoot);
@@ -31,7 +31,7 @@ public class WorkerTest {
     }
 
     @Test
-    public void testGetRootBody() throws Exception {
+    public void getRootBody() throws Exception {
         Socket getRootSocket = new Socket("localhost", 9000);
         PrintWriter toServer = new PrintWriter(getRootSocket.getOutputStream(), true);
         toServer.println(getRoot);
@@ -41,7 +41,7 @@ public class WorkerTest {
     }
 
     @Test
-    public void testPostFormStatus() throws Exception {
+    public void postFormStatus() throws Exception {
         Socket postFormSocket = new Socket("localhost", 9000);
         PrintWriter toServer = new PrintWriter(postFormSocket.getOutputStream(), true);
         toServer.println(postForm);
@@ -51,7 +51,7 @@ public class WorkerTest {
     }
 
     @Test
-    public void testPostGet() throws Exception {
+    public void postGet() throws Exception {
         Socket postFormSocket = new Socket("localhost", 9000);
         PrintWriter postToServer = new PrintWriter(postFormSocket.getOutputStream(), true);
         postToServer.println(postForm);
@@ -65,7 +65,7 @@ public class WorkerTest {
     }
 
     @Test
-    public void testPutGetDeleteGet() throws Exception {
+    public void putGetDeleteGet() throws Exception {
         Socket putFormSocket = new Socket("localhost", 9000);
         PrintWriter putToServer = new PrintWriter(putFormSocket.getOutputStream(), true);
         putToServer.println(putForm);

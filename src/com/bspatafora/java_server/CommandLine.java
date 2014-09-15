@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CommandLine {
+
+    public static final String PORT = "port";
+    public static final String DIRECTORY = "directory";
+
     public static Map parseArguments(String[] args) {
         Map<String, Object> argMap = new HashMap<>();
         try {
@@ -28,8 +32,8 @@ public class CommandLine {
     }
 
     private static Map addArguments(Map<String, Object> argMap, int port, String directory) {
-        argMap.put("port", port);
-        argMap.put("directory", directory);
+        argMap.put(PORT, port);
+        argMap.put(DIRECTORY, directory);
         return argMap;
     }
 }
