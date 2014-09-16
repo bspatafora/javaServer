@@ -27,7 +27,7 @@ public class RequestFactoryTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
         Request request = new RequestFactory(in).build();
-        Assert.assertEquals("Built request has its method set correctly when GET", Methods.GET, request.method());
+        Assert.assertEquals("Built request has its method set to GET", Methods.GET, request.method());
     }
 
     @Test
@@ -37,7 +37,7 @@ public class RequestFactoryTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
         Request request = new RequestFactory(in).build();
-        assertEquals("Built request has its method set correctly when POST", Methods.POST, request.method());
+        assertEquals("Built request has its method set to POST", Methods.POST, request.method());
     }
 
     @Test
@@ -47,7 +47,7 @@ public class RequestFactoryTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
         Request request = new RequestFactory(in).build();
-        assertEquals("Built request has its route set correctly when /", "/", request.route());
+        assertEquals("Built request has its route set to /", "/", request.route());
     }
 
     @Test
@@ -57,7 +57,17 @@ public class RequestFactoryTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
         Request request = new RequestFactory(in).build();
-        assertEquals("Built request has its route set correctly when /form", "/form", request.route());
+        assertEquals("Built request has its route to /form", "/form", request.route());
+    }
+
+    @Test
+    public void setProtocolVersionHTTP11() throws Exception {
+        String requestString = getRoot;
+        InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+        Request request = new RequestFactory(in).build();
+        assertEquals("Built request has its protocol version set to HTTP/1.1", "HTTP/1.1", request.protocolVersion());
     }
 
     @Test

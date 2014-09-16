@@ -29,6 +29,7 @@ public class RequestFactory {
             StringTokenizer requestLineElements = new StringTokenizer(requestLine);
             request.setMethod(requestLineElements.nextToken());
             request.setRoute(requestLineElements.nextToken());
+            request.setProtocolVersion(requestLineElements.nextToken());
         } catch (IOException e) {
             System.err.println("Caught IOException: " + e.getMessage());
         }
