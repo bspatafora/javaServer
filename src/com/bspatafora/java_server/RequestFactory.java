@@ -41,10 +41,8 @@ public class RequestFactory {
                 if (currentLine.length() == 0)
                     break;
                 headers.add(currentLine);
-                if (requestHasBody()) {
-                    if (contentLengthHeader(currentLine)) {
-                        request.setContentLength(parseContentLength(currentLine));
-                    }
+                if (contentLengthHeader(currentLine)) {
+                    request.setContentLength(parseContentLength(currentLine));
                 }
             }
             request.setHeaders(headers);
@@ -72,10 +70,10 @@ public class RequestFactory {
     }
 
     private int parseContentLength(String header) {
-        return Integer.parseInt((header.substring(Headers.contentLength.length())));
+        return Integer.parseInt((header.substring(Headers.CONTENT_LENGTH.length())));
     }
 
     private boolean contentLengthHeader(String header) {
-        return header.startsWith(Headers.contentLength);
+        return header.startsWith(Headers.CONTENT_LENGTH);
     }
 }
