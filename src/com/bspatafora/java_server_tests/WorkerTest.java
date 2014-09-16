@@ -1,5 +1,7 @@
-package com.bspatafora.java_server;
+package com.bspatafora.java_server_tests;
 
+import com.bspatafora.java_server.Server;
+import com.bspatafora.java_server.Stream;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

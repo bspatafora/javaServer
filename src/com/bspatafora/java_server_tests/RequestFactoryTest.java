@@ -1,5 +1,9 @@
-package com.bspatafora.java_server;
+package com.bspatafora.java_server_tests;
 
+import com.bspatafora.java_server.Methods;
+import com.bspatafora.java_server.Request;
+import com.bspatafora.java_server.RequestFactory;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -23,7 +27,7 @@ public class RequestFactoryTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
         Request request = new RequestFactory(in).build();
-        assertEquals("Built request has its method set correctly when GET", Methods.GET, request.method());
+        Assert.assertEquals("Built request has its method set correctly when GET", Methods.GET, request.method());
     }
 
     @Test

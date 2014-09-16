@@ -1,5 +1,6 @@
-package com.bspatafora.java_server;
+package com.bspatafora.java_server_tests;
 
+import com.bspatafora.java_server.CommandLine;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
