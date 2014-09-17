@@ -8,12 +8,13 @@ import java.util.StringTokenizer;
 
 public class RequestFactory {
     private BufferedReader in;
-    private List<String> headers = new ArrayList<>();
     private Request request;
+    private List<String> headers;
 
     public RequestFactory(BufferedReader in) {
         this.in = in;
         this.request = new Request();
+        this.headers = new ArrayList<>();
     }
 
     public Request build() {

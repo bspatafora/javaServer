@@ -12,11 +12,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Worker implements Runnable {
+public class Handler implements Runnable {
     private Socket socket;
     private final Logger logger = LogManager.getLogger();
 
-    public Worker(Socket socket) {
+    public Handler(Socket socket) {
         this.socket = socket;
     }
 
@@ -25,33 +25,32 @@ public class Worker implements Runnable {
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
             long startTime = System.nanoTime();
-            logger.info("Request received " + currentTimeStamp() + ":");
+
+            logger.info("Request received " + currentTimeStamp() + ":\n");
 
             Request request = new RequestFactory(in).build();
-            logger.info("\n" + request.requestString());
 
+            logger.info(request.requestString());
+
+            updateResources(request);
+            Response response = new ResponseFactory(request).build();
+            out.write(response.responseString());
+            out.flush();
+
+            logger.info("Response took " + elapsedTime(startTime) + " milliseconds\n");
+        }
+        catch (IOException e) {
+            System.err.println("Caught IOException: " + e.getMessage());
+        }
+    }
+
+    private void updateResources(Request request) {
+        if (request.route().equals(Routes.FORM)) {
             if (request.body() != null) {
                 Resources.form_resource = request.body();
             } else if (request.method().equals(Methods.DELETE)) {
                 Resources.form_resource = "";
             }
-
-            if (request.route().equals(Routes.FORM)) {
-                out.write(StatusLines.OK + "\r\n");
-                out.write(Resources.form_resource);
-            } else if (request.route().equals(Routes.ROOT)) {
-                out.write(StatusLines.OK + "\r\n");
-                out.write("Hello, world!");
-            } else {
-                out.write(StatusLines.NOT_FOUND + "\r\n");
-                out.write("Not found.");
-            }
-            out.flush();
-
-            logger.info("Response took " + elapsedTime(startTime) + " milliseconds");
-        }
-        catch (IOException e) {
-            System.err.println("Caught IOException: " + e.getMessage());
         }
     }
 

@@ -5,16 +5,24 @@ import java.net.ServerSocket;
 
 public class Server implements Runnable {
     private int port;
+    private Boolean multiThreaded;
 
-    public Server(int port) {
+    public Server(int port, Boolean multiThreaded) {
         this.port = port;
+        this.multiThreaded = multiThreaded;
     }
 
     public void run() {
         try (ServerSocket serverSocket = new ServerSocket(port)
         ) {
-            while(true) {
-                new Thread(new Worker(serverSocket.accept())).start();
+            if (multiThreaded) {
+                while(true) {
+                    new Thread(new Handler(serverSocket.accept())).start();
+                }
+            } else {
+                while(true) {
+                    new Handler(serverSocket.accept()).run();
+                }
             }
         }
         catch (IOException e) {

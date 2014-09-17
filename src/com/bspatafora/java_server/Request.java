@@ -6,9 +6,9 @@ public class Request {
     private String method;
     private String route;
     private String protocolVersion;
+    private List<String> headers;
     private int contentLength;
     private String body;
-    private List<String> headers;
 
     public Request() {
         this.contentLength = 0;
@@ -23,14 +23,14 @@ public class Request {
     public void setProtocolVersion(String protocolVersion) {
         this.protocolVersion = protocolVersion;
     }
+    public void setHeaders(List<String> headers) {
+        this.headers = headers;
+    }
     public void setContentLength(int contentLength) {
         this.contentLength = contentLength;
     }
     public void setBody(String body) {
         this.body = body;
-    }
-    public void setHeaders(List<String> headers) {
-        this.headers = headers;
     }
 
     public String method() {
@@ -42,19 +42,18 @@ public class Request {
     public String protocolVersion() {
         return protocolVersion;
     }
+    public List<String> headers() {
+        return headers;
+    }
     public int contentLength() {
         return contentLength;
     }
     public String body() {
         return body;
     }
-    public List<String> headers() {
-        return headers;
-    }
 
     public String requestString() {
         StringBuilder stringBuilder = new StringBuilder();
-
         stringBuilder.append(method);
         stringBuilder.append(" ");
         stringBuilder.append(route);
