@@ -32,7 +32,7 @@ public class RequestFactory {
             request.setRoute(requestLineElements.nextToken());
             request.setProtocolVersion(requestLineElements.nextToken());
         } catch (IOException e) {
-            System.err.println("Caught IOException: " + e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 
@@ -49,7 +49,7 @@ public class RequestFactory {
             }
             request.setHeaders(headers);
         } catch (IOException e) {
-            System.err.println("Caught IOException: " + e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 
@@ -62,7 +62,7 @@ public class RequestFactory {
                 }
                 request.setBody(body.toString());
             } catch (IOException e) {
-                System.err.println("Caught IOException: " + e.getMessage());
+                System.err.println(e.getMessage());
             }
         }
     }

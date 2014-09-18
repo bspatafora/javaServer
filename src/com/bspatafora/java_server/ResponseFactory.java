@@ -33,8 +33,9 @@ public class ResponseFactory {
     }
 
     private List<String> headers() {
+        headers.add(Headers.CONTENT_TYPE + Headers.TEXT_HTML);
         if (request.route().equals(Routes.REDIRECT)) {
-            headers.add(Headers.LOCATION + "http://localhost:5000" + Routes.ROOT);
+            headers.add(Headers.LOCATION + Routes.PROTOCOL + Routes.HOST + Main.PORT + Routes.ROOT);
         }
         return headers;
     }
@@ -43,11 +44,11 @@ public class ResponseFactory {
         if (request.route().equals(Routes.FORM) && request.method().equals(Methods.GET)) {
             return Resources.form_resource;
         } else if (request.route().equals(Routes.ROOT)) {
-            return "Hello, world!";
+            return Bodies.rootLinks();
         } else if (request.route().equals(Routes.REDIRECT)) {
-            return "Moved.";
+            return Bodies.REDIRECT;
         } else {
-            return "Not found.";
+            return Bodies.NOT_FOUND;
         }
     }
 }

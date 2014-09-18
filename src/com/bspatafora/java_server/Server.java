@@ -26,7 +26,7 @@ public class Server implements Runnable {
             }
         }
         catch (IOException e) {
-            System.err.println("Caught IOException: " + e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 }

@@ -9,7 +9,7 @@ public class ResponseTest {
 
     @Test
     public void responseString() throws Exception {
-        String responseString = "HTTP/1.1 301 Moved Permanently\r\nLocation: http://localhost:5000/\r\n\r\nMoved.\r\n";
+        String responseString = "HTTP/1.1 301 Moved Permanently\r\nContent-Type: text/html\r\nLocation: http://localhost:5000/\r\n\r\nMoved.\r\n";
         Request request = new Request();
         request.setMethod(Methods.GET);
         request.setRoute(Routes.REDIRECT);

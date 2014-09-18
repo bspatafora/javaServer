@@ -1,9 +1,6 @@
 package com.bspatafora.java_server_tests;
 
-import com.bspatafora.java_server.Headers;
-import com.bspatafora.java_server.Server;
-import com.bspatafora.java_server.StatusLine;
-import com.bspatafora.java_server.Stream;
+import com.bspatafora.java_server.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -41,13 +38,13 @@ public class HandlerTest {
     }
 
     @Test
-    public void getRootBody() throws Exception {
+    public void getRootBodyLinks() throws Exception {
         Socket getRootSocket = new Socket(localHost, multiThreadedPort);
         PrintWriter toServer = new PrintWriter(getRootSocket.getOutputStream(), true);
         toServer.println(getRoot);
 
         String getRootResponse = Stream.toString(getRootSocket.getInputStream());
-        assertTrue("Response to GET / has body 'Hello, World!'", getRootResponse.contains("Hello, world!"));
+        assertTrue("Response to GET / has body with the root links", getRootResponse.contains(Bodies.rootLinks()));
     }
 
     @Test

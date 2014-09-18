@@ -25,22 +25,20 @@ public class Handler implements Runnable {
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
             long startTime = System.nanoTime();
-
-            logger.info("Request received " + currentTimeStamp() + ":\n");
+            logger.info(requestReceived());
 
             Request request = new RequestFactory(in).build();
-
             logger.info(request.requestString());
 
             updateResources(request);
+
             Response response = new ResponseFactory(request).build();
             out.write(response.responseString());
             out.flush();
-
-            logger.info("Response took " + elapsedTime(startTime) + " milliseconds\n");
+            logger.info(responseTime(startTime));
         }
         catch (IOException e) {
-            System.err.println("Caught IOException: " + e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 
@@ -52,6 +50,14 @@ public class Handler implements Runnable {
                 Resources.form_resource = "";
             }
         }
+    }
+
+    private String responseTime(long startTime) {
+        return "Response took " + elapsedTime(startTime) + " milliseconds\n";
+    }
+
+    private String requestReceived() {
+        return "Request received " + currentTimeStamp() + ":\n";
     }
 
     private double elapsedTime(long startTime) {

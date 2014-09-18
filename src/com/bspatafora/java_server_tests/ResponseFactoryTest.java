@@ -38,13 +38,13 @@ public class ResponseFactoryTest {
     }
 
     @Test
-    public void setBodyHelloWorld() throws Exception {
+    public void setBodyLinks() throws Exception {
         Request request = new Request();
         request.setMethod(Methods.GET);
         request.setRoute(Routes.ROOT);
 
         Response response = new ResponseFactory(request).build();
-        assertEquals("Built response has its body set to 'Hello, world!'", "Hello, world!", response.body());
+        assertEquals("Built response has its body set to the root links", Bodies.rootLinks(), response.body());
     }
 
     @Test
@@ -69,12 +69,22 @@ public class ResponseFactoryTest {
     }
 
     @Test
+    public void setHeaderContentType() throws Exception {
+        Request request = new Request();
+        request.setMethod(Methods.GET);
+        request.setRoute(Routes.ROOT);
+
+        Response response = new ResponseFactory(request).build();
+        assertTrue("Built response has a 'Content-Type: text/html' header", response.headers().contains(Headers.CONTENT_TYPE + Headers.TEXT_HTML));
+    }
+
+    @Test
     public void setHeaderLocation() throws Exception {
         Request request = new Request();
         request.setMethod(Methods.GET);
         request.setRoute(Routes.REDIRECT);
 
         Response response = new ResponseFactory(request).build();
-        assertTrue("Built response has a 'Location: http://localhost:5000/' header", response.headers().contains(Headers.LOCATION + "http://localhost:5000" + Routes.ROOT));
+        assertTrue("Built response has correct location header", response.headers().contains(Headers.LOCATION + Routes.PROTOCOL + Routes.HOST + Main.PORT + Routes.ROOT));
     }
 }

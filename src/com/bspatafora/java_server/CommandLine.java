@@ -12,10 +12,10 @@ public class CommandLine {
         try {
             switch (args[0]) {
                 case "-p":
-                    addArguments(Integer.parseInt(args[1]), args[3]);
+                    addArguments(args[1], args[3]);
                     break;
                 case "-d":
-                    addArguments(Integer.parseInt(args[3]), args[1]);
+                    addArguments(args[3], args[1]);
                     break;
                 default:
                     defaultArguments();
@@ -34,11 +34,11 @@ public class CommandLine {
     }
 
     private void defaultArguments() {
-        addArguments(5000, "/default/directory/");
+        addArguments("5000", "/default/directory/");
     }
 
-    private void addArguments(int port, String directory) {
-        this.port = port;
+    private void addArguments(String port, String directory) {
+        this.port = Integer.parseInt(port);
         this.directory = directory;
     }
 }

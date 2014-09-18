@@ -7,15 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c612d7d8-8003-4cd7-9840-b8f94f9eee6f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLine.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Handler.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Handler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/HandlerTest.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/HandlerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Headers.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Headers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Response.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Response.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactory.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/ResponseFactory.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/ResponseFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseFactoryTest.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseFactoryTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseTest.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLine.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/java_server/Server.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/java_server/Server.java" />
     </list>
     <ignored path="java_server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,40 +40,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Handler.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Handler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Handler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#1842#1843#0" expanded="true" />
+                <element signature="e#1913#1914#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HandlerTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/HandlerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2130">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseFactory.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ResponseFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/ResponseFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseFactoryTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseFactoryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -105,23 +90,25 @@
         <option value="$PROJECT_DIR$/src/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/RequestFactoryTest.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/RequestTest.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactory.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/WorkerTest.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Worker.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Server.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Handler.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLine.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Request.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/CommandLineTest.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Headers.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Response.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLine.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/ResponseFactory.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseTest.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Headers.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/ResponseFactory.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/HandlerTest.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseFactoryTest.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Body.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Bodies.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLine.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Handler.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/java_server/Server.java" />
       </list>
     </option>
   </component>
@@ -652,19 +639,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1230">
           <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="e#1842#1843#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -680,6 +662,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -687,6 +670,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -694,6 +678,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -709,6 +694,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +702,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="525">
           <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1842#1843#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -732,6 +721,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -739,6 +729,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -746,6 +737,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="255">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -753,7 +745,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="720">
           <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1842#1843#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -769,6 +764,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -776,6 +772,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -783,6 +780,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="210">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -790,7 +788,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="735">
           <caret line="20" column="84" selection-start-line="20" selection-start-column="84" selection-end-line="20" selection-end-column="84" />
-          <folding />
+          <folding>
+            <element signature="e#1842#1843#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -806,6 +807,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -813,6 +815,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -820,7 +823,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="570">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="e#1842#1843#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -836,6 +842,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -843,7 +850,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="555">
           <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="e#1842#1843#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -859,6 +869,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="360">
           <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -884,20 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Methods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.036363635" vertical-offset="0" max-vertical-offset="825">
@@ -906,7 +903,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Resources.java">
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Headers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Bodies.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036363635" vertical-offset="0" max-vertical-offset="825">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036363635" vertical-offset="0" max-vertical-offset="825">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1215">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/CommandLine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -914,9 +943,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Request.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Resources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036363635" vertical-offset="0" max-vertical-offset="825">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036363635" vertical-offset="0" max-vertical-offset="825">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -924,29 +985,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Stream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.036363635" vertical-offset="0" max-vertical-offset="825">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036363635" vertical-offset="0" max-vertical-offset="825">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/CommandLineTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="885">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/HandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="2130">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/RequestFactoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1890">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="1890">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/RequestTest.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.073891625" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/ResponseFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -956,87 +1059,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Headers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Routes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06998445" vertical-offset="0" max-vertical-offset="643">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="643">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Request.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/HandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2130">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/StatusLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server_tests/ResponseFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/RequestFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="1215">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/java_server/ResponseFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1842#1843#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
