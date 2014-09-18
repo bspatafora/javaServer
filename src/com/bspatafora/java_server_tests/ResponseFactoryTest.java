@@ -67,4 +67,14 @@ public class ResponseFactoryTest {
         Response response = new ResponseFactory(request).build();
         assertEquals("Built response has its body set to 'Not found.'", "Not found.", response.body());
     }
+
+    @Test
+    public void setHeaderLocation() throws Exception {
+        Request request = new Request();
+        request.setMethod(Methods.GET);
+        request.setRoute(Routes.REDIRECT);
+
+        Response response = new ResponseFactory(request).build();
+        assertTrue("Built response has a 'Location: http://localhost:5000/' header", response.headers().contains(Headers.LOCATION + "http://localhost:5000" + Routes.ROOT));
+    }
 }

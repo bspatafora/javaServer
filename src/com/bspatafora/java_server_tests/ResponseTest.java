@@ -9,10 +9,10 @@ public class ResponseTest {
 
     @Test
     public void responseString() throws Exception {
-        String responseString = "HTTP/1.1 404 Not Found\r\n\r\nNot found.\r\n";
+        String responseString = "HTTP/1.1 301 Moved Permanently\r\nLocation: http://localhost:5000/\r\n\r\nMoved.\r\n";
         Request request = new Request();
         request.setMethod(Methods.GET);
-        request.setRoute("/unregistered");
+        request.setRoute(Routes.REDIRECT);
         request.setProtocolVersion(StatusLine.HTTP11);
 
         Response response = new ResponseFactory(request).build();

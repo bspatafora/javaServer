@@ -1,5 +1,6 @@
 package com.bspatafora.java_server_tests;
 
+import com.bspatafora.java_server.Headers;
 import com.bspatafora.java_server.Server;
 import com.bspatafora.java_server.StatusLine;
 import com.bspatafora.java_server.Stream;
@@ -21,6 +22,7 @@ public class HandlerTest {
     private static final String getForm = "GET /form HTTP/1.1\r\n";
     private static final String deleteForm = "DELETE /form HTTP/1.1\r\n";
     private static final String getUnregistered = "GET /unregistered HTTP/1.1\r\n";
+    private static final String getRedirect = "GET /redirect HTTP/1.1\r\n";
 
     @BeforeClass
     public static void startServers() {
@@ -104,21 +106,41 @@ public class HandlerTest {
 
     @Test
     public void getUnregisteredStatus() throws Exception {
-        Socket getRootSocket = new Socket(localHost, multiThreadedPort);
-        PrintWriter toServer = new PrintWriter(getRootSocket.getOutputStream(), true);
+        Socket getUnregisteredSocket = new Socket(localHost, multiThreadedPort);
+        PrintWriter toServer = new PrintWriter(getUnregisteredSocket.getOutputStream(), true);
         toServer.println(getUnregistered);
 
-        String getRootResponse = Stream.toString(getRootSocket.getInputStream());
-        assertTrue("Response to GET /unregistered is '404 Not Found'", getRootResponse.contains(StatusLine.NOT_FOUND));
+        String getUnregisteredResponse = Stream.toString(getUnregisteredSocket.getInputStream());
+        assertTrue("Response to GET /unregistered is '404 Not Found'", getUnregisteredResponse.contains(StatusLine.NOT_FOUND));
     }
 
     @Test
     public void getUnregisteredBody() throws Exception {
-        Socket getRootSocket = new Socket(localHost, multiThreadedPort);
-        PrintWriter toServer = new PrintWriter(getRootSocket.getOutputStream(), true);
+        Socket getUnregisteredSocket = new Socket(localHost, multiThreadedPort);
+        PrintWriter toServer = new PrintWriter(getUnregisteredSocket.getOutputStream(), true);
         toServer.println(getUnregistered);
 
-        String getRootResponse = Stream.toString(getRootSocket.getInputStream());
-        assertTrue("Response to GET /unregistered has body 'Not found.'", getRootResponse.contains(StatusLine.NOT_FOUND));
+        String getUnregisteredResponse = Stream.toString(getUnregisteredSocket.getInputStream());
+        assertTrue("Response to GET /unregistered has body 'Not found.'", getUnregisteredResponse.contains(StatusLine.NOT_FOUND));
+    }
+
+    @Test
+    public void getRedirectStatus() throws Exception {
+        Socket getRedirectSocket = new Socket(localHost, multiThreadedPort);
+        PrintWriter toServer = new PrintWriter(getRedirectSocket.getOutputStream(), true);
+        toServer.println(getRedirect);
+
+        String getRedirectResponse = Stream.toString(getRedirectSocket.getInputStream());
+        assertTrue("Response to GET /redirect has status '301 Moved Permanently'", getRedirectResponse.contains(StatusLine.MOVED_PERMANENTLY));
+    }
+
+    @Test
+    public void getRedirectHeader() throws Exception {
+        Socket getRedirectSocket = new Socket(localHost, multiThreadedPort);
+        PrintWriter toServer = new PrintWriter(getRedirectSocket.getOutputStream(), true);
+        toServer.println(getRedirect);
+
+        String getRedirectResponse = Stream.toString(getRedirectSocket.getInputStream());
+        assertTrue("Response to GET /redirect has location header", getRedirectResponse.contains(Headers.LOCATION));
     }
 }
