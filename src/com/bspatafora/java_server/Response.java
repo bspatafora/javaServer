@@ -1,11 +1,12 @@
 package com.bspatafora.java_server;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Response {
     private String protocolVersion;
     private String status;
-    private List<String> headers;
+    private List<String> headers = new ArrayList<>();
     private String body;
 
     public void setProtocolVersion(String protocolVersion) {
@@ -17,6 +18,9 @@ public class Response {
     public void setHeaders(List<String> headers) {
         this.headers = headers;
     }
+    public void addHeader(String header) {
+        this.headers.add(header);
+    } // TEST THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     public void setBody(String body) {
         this.body = body;
     }

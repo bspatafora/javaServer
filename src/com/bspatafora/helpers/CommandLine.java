@@ -1,4 +1,4 @@
-package com.bspatafora.java_server;
+package com.bspatafora.helpers;
 
 public class CommandLine {
     private int port;

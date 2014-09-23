@@ -17,11 +17,11 @@ public class Server implements Runnable {
         ) {
             if (multiThreaded) {
                 while(true) {
-                    new Thread(new Handler(serverSocket.accept())).start();
+                    new Thread(new Worker(serverSocket.accept())).start();
                 }
             } else {
                 while(true) {
-                    new Handler(serverSocket.accept()).run();
+                    new Worker(serverSocket.accept()).run();
                 }
             }
         }

@@ -1,4 +1,4 @@
-package com.bspatafora.java_server;
+package com.bspatafora.constants;
 
 public class Headers {
     public static final String CONTENT_LENGTH = "Content-Length: ";

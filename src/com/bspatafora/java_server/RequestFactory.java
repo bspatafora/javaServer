@@ -1,5 +1,8 @@
 package com.bspatafora.java_server;
 
+import com.bspatafora.constants.Headers;
+import com.bspatafora.constants.Methods;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;

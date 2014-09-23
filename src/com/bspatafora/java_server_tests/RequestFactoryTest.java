@@ -1,6 +1,6 @@
 package com.bspatafora.java_server_tests;
 
-import com.bspatafora.java_server.Methods;
+import com.bspatafora.constants.Methods;
 import com.bspatafora.java_server.Request;
 import com.bspatafora.java_server.RequestFactory;
 import org.junit.Assert;

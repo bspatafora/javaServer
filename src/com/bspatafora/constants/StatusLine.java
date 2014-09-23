@@ -1,4 +1,4 @@
-package com.bspatafora.java_server;
+package com.bspatafora.constants;
 
 public class StatusLine {
     public static final String HTTP11 = "HTTP/1.1";

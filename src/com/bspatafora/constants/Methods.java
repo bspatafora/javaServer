@@ -1,4 +1,4 @@
-package com.bspatafora.java_server;
+package com.bspatafora.constants;
 
 public class Methods {
     public static final String GET = "GET";

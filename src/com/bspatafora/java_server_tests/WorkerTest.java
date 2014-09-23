@@ -1,5 +1,8 @@
 package com.bspatafora.java_server_tests;
 
+import com.bspatafora.constants.Headers;
+import com.bspatafora.constants.StatusLine;
+import com.bspatafora.helpers.Stream;
 import com.bspatafora.java_server.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -9,7 +12,7 @@ import java.net.Socket;
 
 import static org.junit.Assert.*;
 
-public class HandlerTest {
+public class WorkerTest {
     private static final int multiThreadedPort = 9000;
     private static final int singleThreadedPort = 8000;
     private static final String localHost = "localhost";
@@ -38,13 +41,20 @@ public class HandlerTest {
     }
 
     @Test
-    public void getRootBodyLinks() throws Exception {
+    public void getRootBody() throws Exception {
+        String body = "<a href=\"/file1\">file1</a></br>" +
+                "<a href=\"/file2\">file2</a></br>" +
+                "<a href=\"/image.gif\">image.gif</a></br>" +
+                "<a href=\"/image.jpeg\">image.jpeg</a></br>" +
+                "<a href=\"/image.png\">image.png</a></br>" +
+                "<a href=\"/text-file.txt\">text-file.txt</a>";
+
         Socket getRootSocket = new Socket(localHost, multiThreadedPort);
         PrintWriter toServer = new PrintWriter(getRootSocket.getOutputStream(), true);
         toServer.println(getRoot);
 
         String getRootResponse = Stream.toString(getRootSocket.getInputStream());
-        assertTrue("Response to GET / has body with the root links", getRootResponse.contains(Bodies.rootLinks()));
+        assertTrue("Response to GET / has body with the root links", getRootResponse.contains(body));
     }
 
     @Test
