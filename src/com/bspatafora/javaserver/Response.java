@@ -1,26 +1,22 @@
-package com.bspatafora.java_server;
+package com.bspatafora.javaserver;
+
+import com.bspatafora.javaserver.constants.StatusLine;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Response {
-    private String protocolVersion;
+    private String protocolVersion = StatusLine.HTTP11;
     private String status;
     private List<String> headers = new ArrayList<>();
     private String body;
 
-    public void setProtocolVersion(String protocolVersion) {
-        this.protocolVersion = protocolVersion;
-    }
     public void setStatus(String status) {
         this.status = status;
     }
-    public void setHeaders(List<String> headers) {
-        this.headers = headers;
-    }
     public void addHeader(String header) {
         this.headers.add(header);
-    } // TEST THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    }
     public void setBody(String body) {
         this.body = body;
     }

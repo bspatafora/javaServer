@@ -1,4 +1,4 @@
-package com.bspatafora.java_server;
+package com.bspatafora.javaserver;
 
 import com.bspatafora.handlers.Form;
 import com.bspatafora.handlers.Redirect;

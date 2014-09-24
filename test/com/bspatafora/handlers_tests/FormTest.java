@@ -1,10 +1,10 @@
 package com.bspatafora.handlers_tests;
 
-import com.bspatafora.constants.Methods;
-import com.bspatafora.constants.StatusLine;
+import com.bspatafora.javaserver.constants.Methods;
+import com.bspatafora.javaserver.constants.StatusLine;
 import com.bspatafora.handlers.Form;
 import com.bspatafora.helpers.Resources;
-import com.bspatafora.java_server.*;
+import com.bspatafora.javaserver.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -27,18 +27,6 @@ public class FormTest {
 
         postCosbyRequest.setBody(cosby);
         putHeathcliffRequest.setBody(heathcliff);
-    }
-
-    @Test
-    public void responseProtocolVersion() throws Exception {
-        Response getResponse = new Form().response(getRequest);
-        Response postResponse = new Form().response(postCosbyRequest);
-        Response putResponse = new Form().response(putHeathcliffRequest);
-        Response deleteResponse = new Form().response(deleteRequest);
-        assertEquals("Protocol version is 'HTTP/1.1' when GET", StatusLine.HTTP11, getResponse.protocolVersion());
-        assertEquals("Protocol version is 'HTTP/1.1' when POST", StatusLine.HTTP11, postResponse.protocolVersion());
-        assertEquals("Protocol version is 'HTTP/1.1' when PUT", StatusLine.HTTP11, putResponse.protocolVersion());
-        assertEquals("Protocol version is 'HTTP/1.1' when DELETE", StatusLine.HTTP11, deleteResponse.protocolVersion());
     }
 
     @Test

@@ -1,14 +1,13 @@
 package com.bspatafora.handlers;
 
-import com.bspatafora.constants.Headers;
-import com.bspatafora.constants.StatusLine;
-import com.bspatafora.java_server.*;
+import com.bspatafora.javaserver.constants.Headers;
+import com.bspatafora.javaserver.constants.StatusLine;
+import com.bspatafora.javaserver.*;
 
 public class Root implements Handler {
     public Response response(Request request) {
         Response response = new Response();
         response.setStatus(StatusLine.OK);
-        response.setProtocolVersion(StatusLine.HTTP11);
         response.addHeader(Headers.CONTENT_TYPE + Headers.TEXT_HTML);
         response.setBody(body());
         return response;

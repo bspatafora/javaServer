@@ -1,4 +1,4 @@
-package com.bspatafora.java_server;
+package com.bspatafora.javaserver;
 
 import java.io.IOException;
 import java.net.ServerSocket;

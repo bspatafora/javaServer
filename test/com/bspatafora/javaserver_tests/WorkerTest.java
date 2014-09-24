@@ -1,9 +1,9 @@
-package com.bspatafora.java_server_tests;
+package com.bspatafora.javaserver_tests;
 
-import com.bspatafora.constants.Headers;
-import com.bspatafora.constants.StatusLine;
+import com.bspatafora.javaserver.constants.Headers;
+import com.bspatafora.javaserver.constants.StatusLine;
 import com.bspatafora.helpers.Stream;
-import com.bspatafora.java_server.*;
+import com.bspatafora.javaserver.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

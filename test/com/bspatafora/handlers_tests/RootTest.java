@@ -1,22 +1,16 @@
 package com.bspatafora.handlers_tests;
 
 import com.bspatafora.handlers.Root;
-import com.bspatafora.constants.Headers;
-import com.bspatafora.java_server.Request;
-import com.bspatafora.java_server.Response;
-import com.bspatafora.constants.StatusLine;
+import com.bspatafora.javaserver.constants.Headers;
+import com.bspatafora.javaserver.Request;
+import com.bspatafora.javaserver.Response;
+import com.bspatafora.javaserver.constants.StatusLine;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class RootTest {
     private static final Request emptyRequest = new Request();
-
-    @Test
-    public void responseProtocolVersion() throws Exception {
-        Response response = new Root().response(emptyRequest);
-        assertEquals("Protocol version is 'HTTP/1.1'", StatusLine.HTTP11, response.protocolVersion());
-    }
 
     @Test
     public void responseStatus() throws Exception {

@@ -1,7 +1,7 @@
-package com.bspatafora.java_server;
+package com.bspatafora.javaserver;
 
-import com.bspatafora.constants.Headers;
-import com.bspatafora.constants.Methods;
+import com.bspatafora.javaserver.constants.Headers;
+import com.bspatafora.javaserver.constants.Methods;
 
 import java.io.BufferedReader;
 import java.io.IOException;
