@@ -1,6 +1,5 @@
-package com.bspatafora.handlers_tests;
+package com.bspatafora.cobspec.handlers;
 
-import com.bspatafora.handlers.Root;
 import com.bspatafora.javaserver.constants.Headers;
 import com.bspatafora.javaserver.Request;
 import com.bspatafora.javaserver.Response;

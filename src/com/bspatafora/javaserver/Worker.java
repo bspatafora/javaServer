@@ -1,9 +1,5 @@
 package com.bspatafora.javaserver;
 
-import com.bspatafora.handlers.Form;
-import com.bspatafora.handlers.Redirect;
-import com.bspatafora.handlers.Root;
-import com.bspatafora.handlers.Unregistered;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,10 +14,12 @@ import java.util.Calendar;
 
 public class Worker implements Runnable {
     private Socket socket;
+    private Handler router;
     private final Logger logger = LogManager.getLogger();
 
-    public Worker(Socket socket) {
+    public Worker(Socket socket, Handler router) {
         this.socket = socket;
+        this.router = router;
     }
 
     public void run() {
@@ -34,32 +32,13 @@ public class Worker implements Runnable {
             Request request = new RequestFactory(in).build();
             logger.info(request.requestString());
 
-            out.write(responseForRoute(request).responseString());
+            out.write(router.response(request).responseString());
             out.flush();
             logger.info(responseTime(startTime));
         }
         catch (IOException e) {
             System.err.println(e.getMessage());
         }
-    }
-
-    private Response responseForRoute(Request request) {
-        Response response;
-        switch (request.route()) {
-            case "/":
-                response = new Root().response(request);
-                break;
-            case "/form":
-                response = new Form().response(request);
-                break;
-            case "/redirect":
-                response = new Redirect().response(request);
-                break;
-            default:
-                response = new Unregistered().response(request);
-                break;
-        }
-        return response;
     }
 
     private String responseTime(long startTime) {

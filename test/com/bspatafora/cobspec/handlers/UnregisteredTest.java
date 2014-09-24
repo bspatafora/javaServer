@@ -1,6 +1,5 @@
-package com.bspatafora.handlers_tests;
+package com.bspatafora.cobspec.handlers;
 
-import com.bspatafora.handlers.Unregistered;
 import com.bspatafora.javaserver.Request;
 import com.bspatafora.javaserver.Response;
 import com.bspatafora.javaserver.constants.StatusLine;

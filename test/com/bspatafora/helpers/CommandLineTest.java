@@ -1,6 +1,5 @@
-package com.bspatafora.helpers_tests;
+package com.bspatafora.helpers;
 
-import com.bspatafora.helpers.CommandLine;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

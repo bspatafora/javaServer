@@ -1,4 +1,4 @@
-package com.bspatafora.handlers;
+package com.bspatafora.cobspec.handlers;
 
 import com.bspatafora.javaserver.constants.Headers;
 import com.bspatafora.javaserver.constants.StatusLine;

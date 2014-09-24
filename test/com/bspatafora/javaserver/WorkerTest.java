@@ -1,9 +1,9 @@
-package com.bspatafora.javaserver_tests;
+package com.bspatafora.javaserver;
 
+import com.bspatafora.cobspec.Router;
 import com.bspatafora.javaserver.constants.Headers;
 import com.bspatafora.javaserver.constants.StatusLine;
 import com.bspatafora.helpers.Stream;
-import com.bspatafora.javaserver.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -26,8 +26,8 @@ public class WorkerTest {
 
     @BeforeClass
     public static void startServers() {
-        new Thread(new Server(multiThreadedPort, true)).start();
-        new Thread(new Server(singleThreadedPort, false)).start();
+        new Thread(new Server(multiThreadedPort, new Router(), true)).start();
+        new Thread(new Server(singleThreadedPort, new Router(), false)).start();
     }
 
     @Test

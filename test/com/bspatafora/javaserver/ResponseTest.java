@@ -1,7 +1,6 @@
-package com.bspatafora.javaserver_tests;
+package com.bspatafora.javaserver;
 
-import com.bspatafora.handlers.Unregistered;
-import com.bspatafora.javaserver.*;
+import com.bspatafora.cobspec.handlers.Unregistered;
 import com.bspatafora.javaserver.constants.StatusLine;
 import org.junit.Test;
 

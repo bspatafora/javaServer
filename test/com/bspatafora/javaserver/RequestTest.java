@@ -1,7 +1,5 @@
-package com.bspatafora.javaserver_tests;
+package com.bspatafora.javaserver;
 
-import com.bspatafora.javaserver.Request;
-import com.bspatafora.javaserver.RequestFactory;
 import org.junit.Test;
 
 import java.io.BufferedReader;

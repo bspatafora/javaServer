@@ -1,8 +1,7 @@
-package com.bspatafora.handlers_tests;
+package com.bspatafora.cobspec.handlers;
 
 import com.bspatafora.javaserver.constants.Methods;
 import com.bspatafora.javaserver.constants.StatusLine;
-import com.bspatafora.handlers.Form;
 import com.bspatafora.helpers.Resources;
 import com.bspatafora.javaserver.*;
 import org.junit.BeforeClass;
