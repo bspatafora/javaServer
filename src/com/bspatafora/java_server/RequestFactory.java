@@ -30,6 +30,7 @@ public class RequestFactory {
     private void parseRequestLine() {
         try {
             String requestLine = in.readLine();
+            while (requestLine == null) requestLine = in.readLine();
             StringTokenizer requestLineElements = new StringTokenizer(requestLine);
             request.setMethod(requestLineElements.nextToken());
             request.setRoute(requestLineElements.nextToken());
