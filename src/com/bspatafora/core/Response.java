@@ -1,15 +1,15 @@
-package com.bspatafora.javaserver;
+package com.bspatafora.core;
 
-import com.bspatafora.javaserver.constants.StatusLine;
+import com.bspatafora.core.constants.Status;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Response {
-    private String protocolVersion = StatusLine.HTTP11;
+    private String protocolVersion = Status.HTTP11;
     private String status;
     private List<String> headers = new ArrayList<>();
-    private String body;
+    private byte[] body = new byte[0];
 
     public void setStatus(String status) {
         this.status = status;
@@ -17,7 +17,7 @@ public class Response {
     public void addHeader(String header) {
         this.headers.add(header);
     }
-    public void setBody(String body) {
+    public void setBody(byte[] body) {
         this.body = body;
     }
 
@@ -30,11 +30,11 @@ public class Response {
     public List<String> headers() {
         return headers;
     }
-    public String body() {
+    public byte[] body() {
         return body;
     }
 
-    public String responseString() {
+    public String head() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(protocolVersion);
         stringBuilder.append(" ");
@@ -43,8 +43,6 @@ public class Response {
             stringBuilder.append(header);
             stringBuilder.append("\r\n");
         }
-        stringBuilder.append("\r\n");
-        stringBuilder.append(body);
         stringBuilder.append("\r\n");
         return stringBuilder.toString();
     }

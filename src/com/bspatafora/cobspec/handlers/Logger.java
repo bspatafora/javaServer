@@ -1,16 +1,16 @@
 package com.bspatafora.cobspec.handlers;
 
 import com.bspatafora.core.Handler;
-import com.bspatafora.core.constants.Header;
 import com.bspatafora.core.Request;
 import com.bspatafora.core.Response;
 import com.bspatafora.core.constants.Status;
+import com.bspatafora.helpers.Resources;
 
-public class Redirect implements Handler {
+public class Logger implements Handler {
     public Response response(Request request) {
         Response response = new Response();
-        response.setStatus(Status.MOVED_PERMANENTLY);
-        response.addHeader(Header.LOCATION + "http://localhost:5000/");
+        response.setStatus(Status.OK);
+        Resources.logs_resource.add(request.requestString());
         return response;
     }
 }

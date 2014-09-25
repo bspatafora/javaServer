@@ -1,23 +1,19 @@
-package com.bspatafora.javaserver;
+package com.bspatafora.core;
 
-import com.bspatafora.javaserver.constants.Headers;
-import com.bspatafora.javaserver.constants.Methods;
+import com.bspatafora.core.constants.Header;
+import com.bspatafora.core.constants.Method;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.StringTokenizer;
 
 public class RequestFactory {
     private BufferedReader in;
     private Request request;
-    private List<String> headers;
 
     public RequestFactory(BufferedReader in) {
         this.in = in;
         this.request = new Request();
-        this.headers = new ArrayList<>();
     }
 
     public Request build() {
@@ -46,12 +42,13 @@ public class RequestFactory {
             while ((currentLine = in.readLine()) != null) {
                 if (currentLine.length() == 0)
                     break;
-                headers.add(currentLine);
+                request.addHeader(currentLine);
                 if (contentLengthHeader(currentLine)) {
                     request.setContentLength(parseContentLength(currentLine));
+                } else if (basicAuthHeader(currentLine)) {
+                    request.setCredentials(parseCredentials(currentLine));
                 }
             }
-            request.setHeaders(headers);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
@@ -72,14 +69,22 @@ public class RequestFactory {
     }
 
     private Boolean requestHasBody() {
-        return request.method().equals(Methods.POST) || request.method().equals(Methods.PUT);
+        return request.contentLength() > 0;
     }
 
     private int parseContentLength(String header) {
-        return Integer.parseInt((header.substring(Headers.CONTENT_LENGTH.length())));
+        return Integer.parseInt((header.substring(Header.CONTENT_LENGTH.length())));
+    }
+
+    private String parseCredentials(String header) {
+        return header.substring(Header.BASIC_AUTH.length());
     }
 
     private boolean contentLengthHeader(String header) {
-        return header.startsWith(Headers.CONTENT_LENGTH);
+        return header.startsWith(Header.CONTENT_LENGTH);
+    }
+
+    private boolean basicAuthHeader(String header) {
+        return header.startsWith(Header.BASIC_AUTH);
     }
 }

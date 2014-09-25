@@ -1,18 +1,16 @@
-package com.bspatafora.javaserver;
+package com.bspatafora.core;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Request {
     private String method;
     private String route;
     private String protocolVersion;
-    private List<String> headers;
-    private int contentLength;
+    private List<String> headers = new ArrayList<>();
+    private int contentLength = 0;
+    private String credentials = "";
     private String body;
-
-    public Request() {
-        this.contentLength = 0;
-    }
 
     public void setMethod(String method) {
         this.method = method;
@@ -23,11 +21,14 @@ public class Request {
     public void setProtocolVersion(String protocolVersion) {
         this.protocolVersion = protocolVersion;
     }
-    public void setHeaders(List<String> headers) {
-        this.headers = headers;
+    public void addHeader(String header) {
+        this.headers().add(header);
     }
     public void setContentLength(int contentLength) {
         this.contentLength = contentLength;
+    }
+    public void setCredentials(String credentials) {
+        this.credentials = credentials;
     }
     public void setBody(String body) {
         this.body = body;
@@ -47,6 +48,9 @@ public class Request {
     }
     public int contentLength() {
         return contentLength;
+    }
+    public String credentials() {
+        return credentials;
     }
     public String body() {
         return body;

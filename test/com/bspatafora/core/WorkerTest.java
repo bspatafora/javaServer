@@ -1,8 +1,8 @@
-package com.bspatafora.javaserver;
+package com.bspatafora.core;
 
 import com.bspatafora.cobspec.Router;
-import com.bspatafora.javaserver.constants.Headers;
-import com.bspatafora.javaserver.constants.StatusLine;
+import com.bspatafora.core.constants.Header;
+import com.bspatafora.core.constants.Status;
 import com.bspatafora.helpers.Stream;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -37,7 +37,7 @@ public class WorkerTest {
         toServer.println(getRoot);
 
         String getRootResponse = Stream.toString(getRootSocket.getInputStream());
-        assertTrue("Response to GET / is '200 OK'", getRootResponse.contains(StatusLine.OK));
+        assertTrue("Response to GET / is '200 OK'", getRootResponse.contains(Status.OK));
     }
 
     @Test
@@ -64,7 +64,7 @@ public class WorkerTest {
         toServer.println(postForm);
 
         String postFormResponse = Stream.toString(postFormSocket.getInputStream());
-        assertTrue("Response to POST /form is '200 OK'", postFormResponse.contains(StatusLine.OK));
+        assertTrue("Response to POST /form is '200 OK'", postFormResponse.contains(Status.OK));
     }
 
     @Test
@@ -88,7 +88,7 @@ public class WorkerTest {
         putToServer.println(putForm);
 
         String putFormResponse = Stream.toString(putFormSocket.getInputStream());
-        assertTrue("Response to PUT /form is '200 OK'", putFormResponse.contains(StatusLine.OK));
+        assertTrue("Response to PUT /form is '200 OK'", putFormResponse.contains(Status.OK));
 
         Socket getFormSocket1 = new Socket(localHost, singleThreadedPort);
         PrintWriter getToServer1 = new PrintWriter(getFormSocket1.getOutputStream(), true);
@@ -100,8 +100,6 @@ public class WorkerTest {
         Socket deleteFormSocket = new Socket(localHost, singleThreadedPort);
         PrintWriter deleteToServer = new PrintWriter(deleteFormSocket.getOutputStream(), true);
         deleteToServer.println(deleteForm);
-
-        // Thread.sleep(5);
 
         Socket getFormSocket2 = new Socket(localHost, singleThreadedPort);
         PrintWriter getToServer2 = new PrintWriter(getFormSocket2.getOutputStream(), true);
@@ -118,7 +116,7 @@ public class WorkerTest {
         toServer.println(getUnregistered);
 
         String getUnregisteredResponse = Stream.toString(getUnregisteredSocket.getInputStream());
-        assertTrue("Response to GET /unregistered is '404 Not Found'", getUnregisteredResponse.contains(StatusLine.NOT_FOUND));
+        assertTrue("Response to GET /unregistered is '404 Not Found'", getUnregisteredResponse.contains(Status.NOT_FOUND));
     }
 
     @Test
@@ -128,7 +126,7 @@ public class WorkerTest {
         toServer.println(getUnregistered);
 
         String getUnregisteredResponse = Stream.toString(getUnregisteredSocket.getInputStream());
-        assertTrue("Response to GET /unregistered has body 'Not found.'", getUnregisteredResponse.contains(StatusLine.NOT_FOUND));
+        assertTrue("Response to GET /unregistered has body 'Not found.'", getUnregisteredResponse.contains(Status.NOT_FOUND));
     }
 
     @Test
@@ -138,7 +136,7 @@ public class WorkerTest {
         toServer.println(getRedirect);
 
         String getRedirectResponse = Stream.toString(getRedirectSocket.getInputStream());
-        assertTrue("Response to GET /redirect has status '301 Moved Permanently'", getRedirectResponse.contains(StatusLine.MOVED_PERMANENTLY));
+        assertTrue("Response to GET /redirect has status '301 Moved Permanently'", getRedirectResponse.contains(Status.MOVED_PERMANENTLY));
     }
 
     @Test
@@ -148,6 +146,6 @@ public class WorkerTest {
         toServer.println(getRedirect);
 
         String getRedirectResponse = Stream.toString(getRedirectSocket.getInputStream());
-        assertTrue("Response to GET /redirect has location header", getRedirectResponse.contains(Headers.LOCATION));
+        assertTrue("Response to GET /redirect has location header", getRedirectResponse.contains(Header.LOCATION));
     }
 }

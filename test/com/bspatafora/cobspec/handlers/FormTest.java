@@ -1,13 +1,15 @@
 package com.bspatafora.cobspec.handlers;
 
-import com.bspatafora.javaserver.constants.Methods;
-import com.bspatafora.javaserver.constants.StatusLine;
+import com.bspatafora.core.constants.Header;
+import com.bspatafora.core.constants.Method;
+import com.bspatafora.core.constants.Status;
 import com.bspatafora.helpers.Resources;
-import com.bspatafora.javaserver.*;
+import com.bspatafora.core.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class FormTest {
     private static Request getRequest = new Request();
@@ -19,10 +21,10 @@ public class FormTest {
 
     @BeforeClass
     public static void createRequests() {
-        getRequest.setMethod(Methods.GET);
-        postCosbyRequest.setMethod(Methods.POST);
-        putHeathcliffRequest.setMethod(Methods.PUT);
-        deleteRequest.setMethod(Methods.DELETE);
+        getRequest.setMethod(Method.GET);
+        postCosbyRequest.setMethod(Method.POST);
+        putHeathcliffRequest.setMethod(Method.PUT);
+        deleteRequest.setMethod(Method.DELETE);
 
         postCosbyRequest.setBody(cosby);
         putHeathcliffRequest.setBody(heathcliff);
@@ -34,10 +36,16 @@ public class FormTest {
         Response postResponse = new Form().response(postCosbyRequest);
         Response putResponse = new Form().response(putHeathcliffRequest);
         Response deleteResponse = new Form().response(deleteRequest);
-        assertEquals("Status is '200 OK' when GET", StatusLine.OK, getResponse.status());
-        assertEquals("Status is '200 OK' when POST", StatusLine.OK, postResponse.status());
-        assertEquals("Status is '200 OK' when PUT", StatusLine.OK, putResponse.status());
-        assertEquals("Status is '200 OK' when DELETE", StatusLine.OK, deleteResponse.status());
+        assertEquals("Status is '200 OK' when GET", Status.OK, getResponse.status());
+        assertEquals("Status is '200 OK' when POST", Status.OK, postResponse.status());
+        assertEquals("Status is '200 OK' when PUT", Status.OK, putResponse.status());
+        assertEquals("Status is '200 OK' when DELETE", Status.OK, deleteResponse.status());
+    }
+
+    @Test
+    public void responseContentTypeHeaderWhenGET() throws Exception {
+        Response response = new Form().response(getRequest);
+        assertTrue("Content type header is set to 'text/html' when GET", response.headers().contains(Header.CONTENT_TYPE + Header.TEXT_HTML));
     }
 
     @Test
@@ -45,17 +53,7 @@ public class FormTest {
         Resources.form_resource = cosby;
 
         Response response = new Form().response(getRequest);
-        assertEquals("Body is whatever is stored in the form resource when GET", cosby, response.body());
-    }
-
-    @Test
-    public void responseBodyWhenPostPutDelete() throws Exception {
-        Response postResponse = new Form().response(postCosbyRequest);
-        Response putResponse = new Form().response(putHeathcliffRequest);
-        Response deleteResponse = new Form().response(deleteRequest);
-        assertEquals("Body is empty when POST", null, postResponse.body());
-        assertEquals("Body is empty when PUT", null, putResponse.body());
-        assertEquals("Body is empty when DELETE", null, deleteResponse.body());
+        assertEquals("Body is whatever is stored in the form resource when GET", cosby, new String(response.body()));
     }
 
     @Test
@@ -71,6 +69,6 @@ public class FormTest {
         Resources.form_resource = cosby;
 
         new Form().response(deleteRequest);
-        assertEquals("Form resource is deleted", null, Resources.form_resource);
+        assertEquals("Form resource is deleted", "", Resources.form_resource);
     }
 }

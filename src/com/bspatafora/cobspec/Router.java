@@ -1,27 +1,32 @@
 package com.bspatafora.cobspec;
 
-import com.bspatafora.cobspec.handlers.Form;
-import com.bspatafora.cobspec.handlers.Redirect;
-import com.bspatafora.cobspec.handlers.Root;
-import com.bspatafora.cobspec.handlers.Unregistered;
-import com.bspatafora.javaserver.Handler;
-import com.bspatafora.javaserver.Request;
-import com.bspatafora.javaserver.Response;
+import com.bspatafora.cobspec.handlers.*;
+import com.bspatafora.core.Handler;
+import com.bspatafora.core.Request;
+import com.bspatafora.core.Response;
 
 import java.util.HashMap;
 
 public class Router implements Handler {
-    private static final HashMap<String, Object> routes;
+    private static final HashMap<String, Handler> routes;
     static
     {
         routes = new HashMap<>();
         routes.put("/", new Root());
         routes.put("/form", new Form());
         routes.put("/redirect", new Redirect());
+        routes.put("/image.jpeg", new ImageJPEG());
+        routes.put("/image.png", new ImagePNG());
+        routes.put("/image.gif", new ImageGIF());
+        routes.put("/logs", new Logs());
+        routes.put("/log", new Logger());
+        routes.put("/these", new Logger());
+        routes.put("/requests", new Logger());
     }
 
     public Response response(Request request) {
-        Object handler = routes.getOrDefault(request.route(), new Unregistered());
-        return ((Handler)handler).response(request);
+        Handler notFound = new Unregistered();
+        Handler handler = routes.getOrDefault(request.route(), notFound);
+        return handler.response(request);
     }
 }

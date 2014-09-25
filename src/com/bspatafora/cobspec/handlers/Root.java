@@ -1,15 +1,15 @@
 package com.bspatafora.cobspec.handlers;
 
-import com.bspatafora.javaserver.constants.Headers;
-import com.bspatafora.javaserver.constants.StatusLine;
-import com.bspatafora.javaserver.*;
+import com.bspatafora.core.constants.Header;
+import com.bspatafora.core.constants.Status;
+import com.bspatafora.core.*;
 
 public class Root implements Handler {
     public Response response(Request request) {
         Response response = new Response();
-        response.setStatus(StatusLine.OK);
-        response.addHeader(Headers.CONTENT_TYPE + Headers.TEXT_HTML);
-        response.setBody(body());
+        response.setStatus(Status.OK);
+        response.addHeader(Header.CONTENT_TYPE + Header.TEXT_HTML);
+        response.setBody(body().getBytes());
         return response;
     }
 

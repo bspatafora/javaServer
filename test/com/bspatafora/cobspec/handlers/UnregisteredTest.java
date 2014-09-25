@@ -1,8 +1,9 @@
 package com.bspatafora.cobspec.handlers;
 
-import com.bspatafora.javaserver.Request;
-import com.bspatafora.javaserver.Response;
-import com.bspatafora.javaserver.constants.StatusLine;
+import com.bspatafora.core.Request;
+import com.bspatafora.core.Response;
+import com.bspatafora.core.constants.Header;
+import com.bspatafora.core.constants.Status;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -13,7 +14,13 @@ public class UnregisteredTest {
     @Test
     public void responseStatus() throws Exception {
         Response response = new Unregistered().response(emptyRequest);
-        assertEquals("Status is '404 Not Found'", StatusLine.NOT_FOUND, response.status());
+        assertEquals("Status is '404 Not Found'", Status.NOT_FOUND, response.status());
+    }
+
+    @Test
+    public void responseContentTypeHeader() throws Exception {
+        Response response = new Unregistered().response(emptyRequest);
+        assertTrue("Content type header is set to 'text/html'", response.headers().contains(Header.CONTENT_TYPE + Header.TEXT_HTML));
     }
 
     @Test
@@ -21,6 +28,6 @@ public class UnregisteredTest {
         String body = "Not found.";
 
         Response response = new Unregistered().response(emptyRequest);
-        assertEquals("Body is 'Not found.'", body, response.body());
+        assertEquals("Body is 'Not found.'", body, new String(response.body()));
     }
 }

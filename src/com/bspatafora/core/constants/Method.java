@@ -1,6 +1,6 @@
-package com.bspatafora.javaserver.constants;
+package com.bspatafora.core.constants;
 
-public class Methods {
+public class Method {
     public static final String GET = "GET";
     public static final String POST = "POST";
     public static final String PUT = "PUT";

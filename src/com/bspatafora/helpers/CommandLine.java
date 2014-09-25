@@ -34,7 +34,7 @@ public class CommandLine {
     }
 
     private void defaultArguments() {
-        addArguments("5000", "/default/directory/");
+        addArguments("5000", "/Users/ben/Dropbox/dev/cob_spec/public/");
     }
 
     private void addArguments(String port, String directory) {

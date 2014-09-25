@@ -1,12 +1,9 @@
-package com.bspatafora.javaserver;
+package com.bspatafora.core;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -23,7 +20,8 @@ public class Worker implements Runnable {
     }
 
     public void run() {
-        try (PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+        try (OutputStream byteOut = socket.getOutputStream();
+             PrintWriter textOut = new PrintWriter(byteOut, true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
             long startTime = System.nanoTime();
@@ -32,8 +30,10 @@ public class Worker implements Runnable {
             Request request = new RequestFactory(in).build();
             logger.info(request.requestString());
 
-            out.write(router.response(request).responseString());
-            out.flush();
+            Response response = router.response(request);
+            textOut.write(response.head());
+            textOut.flush();
+            byteOut.write(response.body());
             logger.info(responseTime(startTime));
         }
         catch (IOException e) {

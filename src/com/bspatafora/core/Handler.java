@@ -1,4 +1,4 @@
-package com.bspatafora.javaserver;
+package com.bspatafora.core;
 
 public interface Handler {
     Response response(Request request);

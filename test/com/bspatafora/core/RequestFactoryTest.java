@@ -1,6 +1,6 @@
-package com.bspatafora.javaserver;
+package com.bspatafora.core;
 
-import com.bspatafora.javaserver.constants.Methods;
+import com.bspatafora.core.constants.Method;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -25,7 +26,7 @@ public class RequestFactoryTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
         Request request = new RequestFactory(in).build();
-        Assert.assertEquals("Built request has its method set to GET", Methods.GET, request.method());
+        Assert.assertEquals("Built request has its method set to GET", Method.GET, request.method());
     }
 
     @Test
@@ -35,7 +36,7 @@ public class RequestFactoryTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
         Request request = new RequestFactory(in).build();
-        assertEquals("Built request has its method set to POST", Methods.POST, request.method());
+        assertEquals("Built request has its method set to POST", Method.POST, request.method());
     }
 
     @Test
@@ -89,6 +90,17 @@ public class RequestFactoryTest {
     }
 
     @Test
+    public void setCredentials() throws Exception {
+        String credentials = new String(Base64.getEncoder().encode("admin:hunter2".getBytes()));
+        String requestString = "GET / HTTP/1.1\r\nAuthorization: Basic " + credentials + "\r\n";
+        InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+        Request request = new RequestFactory(in).build();
+        assertEquals("Built request has its credentials set correctly", credentials, request.credentials());
+    }
+
+    @Test
     public void initializeBodyNull() throws Exception {
         String requestString = getRoot;
         InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
@@ -115,7 +127,7 @@ public class RequestFactoryTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
         Request request = new RequestFactory(in).build();
-        assertEquals("Built request has its headers initialized to an empty array list", new ArrayList<>(), request.headers());
+        assertEquals("Built request has its headers initialized to an empty array list", new ArrayList<String>(), request.headers());
     }
 
     @Test

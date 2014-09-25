@@ -1,13 +1,11 @@
 package com.bspatafora.helpers;
 
+import com.bspatafora.core.Settings;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class CommandLineTest {
-    private static final int defaultPort = 5000;
-    private static final String defaultDirectory = "/default/directory/";
-
     @Test
     public void parseArgumentsPortFirst() throws Exception {
         String[] args = { "-p", "9000", "-d", "/some_directory/" };
@@ -31,8 +29,8 @@ public class CommandLineTest {
         String[] args = { "-r", "incorrect", "-g", "usage" };
 
         CommandLine commandLine = new CommandLine(args);
-        assertTrue("Port is set to default with malformed args", commandLine.port() == defaultPort);
-        assertTrue("Directory is set to default with malformed args", commandLine.directory().equals(defaultDirectory));
+        assertTrue("Port is set to default with malformed args", commandLine.port() == Settings.port);
+        assertTrue("Directory is set to default with malformed args", commandLine.directory().equals(Settings.directory));
     }
 
     @Test
@@ -40,8 +38,8 @@ public class CommandLineTest {
         String[] args = { "-d", "/some_directory/" };
 
         CommandLine commandLine = new CommandLine(args);
-        assertTrue("Port is set to default with too few args", commandLine.port() == defaultPort);
-        assertTrue("Directory is set to default with too few args", commandLine.directory().equals(defaultDirectory));
+        assertTrue("Port is set to default with too few args", commandLine.port() == Settings.port);
+        assertTrue("Directory is set to default with too few args", commandLine.directory().equals(Settings.directory));
     }
 
     @Test
@@ -49,7 +47,7 @@ public class CommandLineTest {
         String[] args = { "-p", "not_a_number", "-d", "/some_directory/" };
 
         CommandLine commandLine = new CommandLine(args);
-        assertTrue("Port is set to default with invalid port", commandLine.port() == defaultPort);
-        assertTrue("Directory is set to default with invalid port", commandLine.directory().equals(defaultDirectory));
+        assertTrue("Port is set to default with invalid port", commandLine.port() == Settings.port);
+        assertTrue("Directory is set to default with invalid port", commandLine.directory().equals(Settings.directory));
     }
 }
