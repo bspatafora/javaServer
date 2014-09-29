@@ -1,6 +1,7 @@
 package com.bspatafora.core;
 
 import com.bspatafora.core.constants.Method;
+import com.bspatafora.core.constants.Status;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ import static org.junit.Assert.*;
 
 public class RequestFactoryTest {
     private static final String getRoot = "GET / HTTP/1.1\r\n";
-    private static final String postForm = "POST /form HTTP/1.1\r\nContent-Length: 10\r\n\r\ndata=cosby\r\n";
+    private static final String postForm = "POST /form HTTP/1.0\r\nContent-Length: 10\r\n\r\ndata=cosby\r\n";
 
     @Test
     public void setMethodGET() throws Exception {
@@ -66,7 +67,17 @@ public class RequestFactoryTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
         Request request = new RequestFactory(in).build();
-        assertEquals("Built request has its protocol version set to HTTP/1.1", "HTTP/1.1", request.protocolVersion());
+        assertEquals("Built request has its protocol version set to HTTP/1.1", Status.HTTP11, request.protocolVersion());
+    }
+
+    @Test
+    public void setProtocolVersionHTTP10() throws Exception {
+        String requestString = postForm;
+        InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+        Request request = new RequestFactory(in).build();
+        assertEquals("Built request has its protocol version set to HTTP/1.0", "HTTP/1.0", request.protocolVersion());
     }
 
     @Test
@@ -87,6 +98,16 @@ public class RequestFactoryTest {
 
         Request request = new RequestFactory(in).build();
         assertEquals("Built request has its content length set to 10", 10, request.contentLength());
+    }
+
+    @Test
+    public void initializeCredentialsEmpty() throws Exception {
+        String requestString = getRoot;
+        InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+        Request request = new RequestFactory(in).build();
+        assertEquals("Built request has its credentials initialized to an empty string", "", request.credentials());
     }
 
     @Test

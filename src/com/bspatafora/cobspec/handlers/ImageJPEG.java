@@ -11,18 +11,11 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public class ImageJPEG implements Handler {
-    public Response response(Request request) {
-        Response response = new Response();
-        response.setStatus(Status.OK);
-        response.addHeader(Header.CONTENT_TYPE + Header.IMAGE_JPEG);
-        File file = new File(Settings.directory + "image.jpeg");
-        try {
-            byte[] image = Files.readAllBytes(file.toPath());
-            response.setBody(image);
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-        }
-        return response;
+public class ImageJPEG extends Image implements Handler {
+    public void setContentType() {
+        contentType = Header.IMAGE_JPEG;
+    }
+    public void setFileName() {
+        fileName = "image.jpeg";
     }
 }

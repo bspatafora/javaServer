@@ -11,18 +11,11 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public class ImageGIF implements Handler {
-    public Response response(Request request) {
-        Response response = new Response();
-        response.setStatus(Status.OK);
-        response.addHeader(Header.CONTENT_TYPE + Header.IMAGE_GIF);
-        File file = new File(Settings.directory + "image.gif");
-        try {
-            byte[] image = Files.readAllBytes(file.toPath());
-            response.setBody(image);
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-        }
-        return response;
+public class ImageGIF extends Image implements Handler {
+    public void setContentType() {
+        contentType = Header.IMAGE_GIF;
+    }
+    public void setFileName() {
+        fileName = "image.gif";
     }
 }
