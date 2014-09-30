@@ -2,6 +2,9 @@ package com.bspatafora.core;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class Server implements Runnable {
     private int port;
@@ -18,11 +21,13 @@ public class Server implements Runnable {
         try (ServerSocket serverSocket = new ServerSocket(port)
         ) {
             if (multiThreaded) {
-                while(true) {
-                    new Thread(new Worker(serverSocket.accept(), router)).start();
+                Executor threadPool = Executors.newFixedThreadPool(50);
+                while (true) {
+                    Socket socket = serverSocket.accept();
+                    threadPool.execute(new Worker(socket, router));
                 }
             } else {
-                while(true) {
+                while (true) {
                     new Worker(serverSocket.accept(), router).run();
                 }
             }
