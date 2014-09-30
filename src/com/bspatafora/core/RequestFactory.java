@@ -1,7 +1,6 @@
 package com.bspatafora.core;
 
 import com.bspatafora.core.constants.Header;
-import com.bspatafora.core.constants.Method;
 
 import java.io.BufferedReader;
 import java.io.IOException;

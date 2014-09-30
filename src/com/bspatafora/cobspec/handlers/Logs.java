@@ -4,7 +4,7 @@ import com.bspatafora.core.Handler;
 import com.bspatafora.core.Request;
 import com.bspatafora.core.Response;
 import com.bspatafora.core.constants.Status;
-import com.bspatafora.helpers.Resources;
+import com.bspatafora.cobspec.Resources;
 
 import java.util.Base64;
 

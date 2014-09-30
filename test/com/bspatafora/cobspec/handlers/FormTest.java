@@ -3,7 +3,7 @@ package com.bspatafora.cobspec.handlers;
 import com.bspatafora.core.constants.Header;
 import com.bspatafora.core.constants.Method;
 import com.bspatafora.core.constants.Status;
-import com.bspatafora.helpers.Resources;
+import com.bspatafora.cobspec.Resources;
 import com.bspatafora.core.*;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.bspatafora.helpers;
+package com.bspatafora.cobspec;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,9 +2,8 @@ package com.bspatafora.cobspec.handlers;
 
 import com.bspatafora.core.Request;
 import com.bspatafora.core.Response;
-import com.bspatafora.core.constants.Header;
 import com.bspatafora.core.constants.Status;
-import com.bspatafora.helpers.Resources;
+import com.bspatafora.cobspec.Resources;
 import org.junit.Test;
 
 import java.util.Base64;
