@@ -12,11 +12,12 @@ import java.util.Calendar;
 public class Worker implements Runnable {
     private Socket socket;
     private Handler router;
-    private final Logger logger = LogManager.getLogger();
+    private Logger logger;
 
     public Worker(Socket socket, Handler router) {
         this.socket = socket;
         this.router = router;
+        this.logger = LogManager.getLogger();
     }
 
     public void run() {

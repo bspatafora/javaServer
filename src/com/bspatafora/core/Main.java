@@ -5,6 +5,7 @@ import com.bspatafora.helpers.CommandLine;
 
 public class Main {
     public static void main(String[] args) {
+        System.setProperty("Log4jContextSelector", "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
         CommandLine parsedArguments = new CommandLine(args);
         Settings.port = parsedArguments.port();
         Settings.directory = parsedArguments.directory();

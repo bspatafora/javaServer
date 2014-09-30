@@ -20,16 +20,13 @@ public class Server implements Runnable {
     public void run() {
         try (ServerSocket serverSocket = new ServerSocket(port)
         ) {
-            if (multiThreaded) {
-                Executor threadPool = Executors.newFixedThreadPool(50);
-                while (true) {
-                    Socket socket = serverSocket.accept();
-                    threadPool.execute(new Worker(socket, router));
-                }
-            } else {
-                while (true) {
-                    new Worker(serverSocket.accept(), router).run();
-                }
+            Executor threadPool = Executors.newFixedThreadPool(5);
+            while (multiThreaded) {
+                Socket socket = serverSocket.accept();
+                threadPool.execute(new Worker(socket, router));
+            }
+            while (!multiThreaded) {
+                new Worker(serverSocket.accept(), router).run();
             }
         }
         catch (IOException e) {
