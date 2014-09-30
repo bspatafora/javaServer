@@ -3,6 +3,8 @@ package com.bspatafora.cobspec.handlers;
 import com.bspatafora.core.constants.Header;
 import com.bspatafora.core.constants.Status;
 import com.bspatafora.core.*;
+import com.bspatafora.helpers.FileSystem;
+import com.bspatafora.helpers.HTML;
 
 public class Root implements Handler {
     public Response response(Request request) {
@@ -14,11 +16,12 @@ public class Root implements Handler {
     }
 
     private String body() {
-        return "<a href=\"/file1\">file1</a></br>" +
-               "<a href=\"/file2\">file2</a></br>" +
-               "<a href=\"/image.gif\">image.gif</a></br>" +
-               "<a href=\"/image.jpeg\">image.jpeg</a></br>" +
-               "<a href=\"/image.png\">image.png</a></br>" +
-               "<a href=\"/text-file.txt\">text-file.txt</a>";
+        String[] fileNames = FileSystem.fileNames(Settings.directory);
+        StringBuilder fileLinks = new StringBuilder();
+        for (String fileName : fileNames) {
+            fileLinks.append(HTML.link(fileName, fileName));
+            fileLinks.append("</br>");
+        }
+        return fileLinks.toString();
     }
 }

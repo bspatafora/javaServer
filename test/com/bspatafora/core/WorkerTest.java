@@ -3,6 +3,8 @@ package com.bspatafora.core;
 import com.bspatafora.cobspec.Router;
 import com.bspatafora.core.constants.Header;
 import com.bspatafora.core.constants.Status;
+import com.bspatafora.helpers.FileSystem;
+import com.bspatafora.helpers.HTML;
 import com.bspatafora.helpers.Stream;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -42,12 +44,15 @@ public class WorkerTest {
 
     @Test
     public void getRootBody() throws Exception {
-        String body = "<a href=\"/file1\">file1</a></br>" +
+        String body = "<a href=\"/.DS_Store\">.DS_Store</a></br>" +
+                "<a href=\"/file1\">file1</a></br>" +
                 "<a href=\"/file2\">file2</a></br>" +
                 "<a href=\"/image.gif\">image.gif</a></br>" +
                 "<a href=\"/image.jpeg\">image.jpeg</a></br>" +
                 "<a href=\"/image.png\">image.png</a></br>" +
-                "<a href=\"/text-file.txt\">text-file.txt</a>";
+                "<a href=\"/partial_content.txt\">partial_content.txt</a></br>" +
+                "<a href=\"/patch-content.txt\">patch-content.txt</a></br>" +
+                "<a href=\"/text-file.txt\">text-file.txt</a></br>";
 
         Socket getRootSocket = new Socket(localHost, multiThreadedPort);
         PrintWriter toServer = new PrintWriter(getRootSocket.getOutputStream(), true);
