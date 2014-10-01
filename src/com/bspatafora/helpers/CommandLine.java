@@ -8,7 +8,7 @@ public class CommandLine {
         parseArguments(args);
     }
 
-    public void parseArguments(String[] args) {
+    private void parseArguments(String[] args) {
         try {
             switch (args[0]) {
                 case "-p":

@@ -6,10 +6,10 @@ import java.net.Socket;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class Server implements Runnable {
-    private int port;
-    private Handler router;
-    private Boolean multiThreaded;
+class Server implements Runnable {
+    private final int port;
+    private final Handler router;
+    private final Boolean multiThreaded;
 
     public Server(int port, Handler router, Boolean multiThreaded) {
         this.port = port;

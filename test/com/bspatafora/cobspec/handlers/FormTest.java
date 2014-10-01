@@ -12,10 +12,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class FormTest {
-    private static Request getRequest = new Request();
-    private static Request postCosbyRequest = new Request();
-    private static Request putHeathcliffRequest = new Request();
-    private static Request deleteRequest = new Request();
+    private static final Request getRequest = new Request();
+    private static final Request postCosbyRequest = new Request();
+    private static final Request putHeathcliffRequest = new Request();
+    private static final Request deleteRequest = new Request();
     private static final String cosby = "cosby";
     private static final String heathcliff = "heathcliff";
 

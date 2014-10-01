@@ -10,12 +10,12 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public abstract class FileHandler {
-    protected String contentType;
-    protected String fileName;
+abstract class FileHandler {
+    String contentType;
+    String fileName;
 
-    public abstract void setContentType();
-    public abstract void setFileName();
+    protected abstract void setContentType();
+    protected abstract void setFileName();
 
     public Response response(Request request) {
         setContentType();

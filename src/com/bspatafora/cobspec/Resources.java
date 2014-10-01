@@ -5,5 +5,5 @@ import java.util.List;
 
 public class Resources {
     public static String form_resource = "";
-    public static List<String> logs_resource = new ArrayList<>();
+    public static final List<String> logs_resource = new ArrayList<>();
 }

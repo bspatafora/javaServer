@@ -9,10 +9,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Worker implements Runnable {
-    private Socket socket;
-    private Handler router;
-    private Logger logger;
+class Worker implements Runnable {
+    private final Socket socket;
+    private final Handler router;
+    private final Logger logger;
 
     public Worker(Socket socket, Handler router) {
         this.socket = socket;

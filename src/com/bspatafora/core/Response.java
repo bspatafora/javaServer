@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Response {
-    private String protocolVersion = Status.HTTP11;
+    private final String protocolVersion = Status.HTTP11;
     private String status;
-    private List<String> headers = new ArrayList<>();
+    private final List<String> headers = new ArrayList<>();
     private byte[] body = new byte[0];
 
     public void setStatus(String status) {

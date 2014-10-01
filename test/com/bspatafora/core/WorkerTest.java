@@ -3,8 +3,6 @@ package com.bspatafora.core;
 import com.bspatafora.cobspec.Router;
 import com.bspatafora.core.constants.Header;
 import com.bspatafora.core.constants.Status;
-import com.bspatafora.helpers.FileSystem;
-import com.bspatafora.helpers.HTML;
 import com.bspatafora.helpers.Stream;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -7,7 +7,7 @@ public class Request {
     private String method;
     private String route;
     private String protocolVersion;
-    private List<String> headers = new ArrayList<>();
+    private final List<String> headers = new ArrayList<>();
     private int contentLength = 0;
     private String credentials = "";
     private String body;
