@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public abstract class Image {
+public abstract class FileHandler {
     protected String contentType;
     protected String fileName;
 
@@ -25,8 +25,8 @@ public abstract class Image {
         response.addHeader(Header.CONTENT_TYPE + contentType);
         File file = new File(Settings.directory + fileName);
         try {
-            byte[] image = Files.readAllBytes(file.toPath());
-            response.setBody(image);
+            byte[] fileBytes = Files.readAllBytes(file.toPath());
+            response.setBody(fileBytes);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }

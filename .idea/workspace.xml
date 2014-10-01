@@ -7,18 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c612d7d8-8003-4cd7-9840-b8f94f9eee6f" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/bspatafora/helpers/Resources.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/Resources.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Form.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Form.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/FormTest.java" afterPath="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/FormTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/File1.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/File1Test.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Image.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/FileHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImageGIF.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImageGIF.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImageJPEG.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImageJPEG.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImagePNG.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImagePNG.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Logger.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Logger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/LoggerTest.java" afterPath="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/LoggerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Logs.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Logs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/LogsTest.java" afterPath="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/LogsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/core/Main.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/core/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/core/RequestFactory.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/core/RequestFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bspatafora/cobspec/Router.java" afterPath="$PROJECT_DIR$/src/com/bspatafora/cobspec/Router.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java_server.iws" />
@@ -41,18 +36,7 @@
     <favorites_list name="java_server" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Worker.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/bspatafora/core/Worker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="855">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -65,10 +49,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/com/bspatafora/cobspec/RouterTest.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/routes/Redirect.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/routes/Unregistered.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/javaserver/Router.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/javaserver/Worker.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/javaserver/Server.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/javaserver/Main.java" />
@@ -87,7 +67,6 @@
         <option value="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/FormTest.java" />
         <option value="$PROJECT_DIR$/test/com/bspatafora/core/RequestTest.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Logs.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/Router.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/core/Request.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/helpers/CommandLine.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/core/constants/Settings.java" />
@@ -99,7 +78,6 @@
         <option value="$PROJECT_DIR$/src/com/bspatafora/core/constants/Header.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Redirect.java" />
         <option value="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/RedirectTest.java" />
-        <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Image.java" />
         <option value="$PROJECT_DIR$/test/com/bspatafora/core/RequestFactoryTest.java" />
         <option value="$PROJECT_DIR$/src/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/core/Worker.java" />
@@ -116,6 +94,12 @@
         <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImagePNG.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/core/Main.java" />
         <option value="$PROJECT_DIR$/src/com/bspatafora/core/RequestFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/File1.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/Router.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/File.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Image.java" />
+        <option value="$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/FileHandler.java" />
+        <option value="$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/File1Test.java" />
       </list>
     </option>
   </component>
@@ -209,6 +193,24 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bspatafora" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java_server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java_server" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -228,6 +230,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bspatafora" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -365,8 +371,8 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.bspatafora.helpers" />
       <recent name="com.bspatafora.cobspec.handlers" />
+      <recent name="com.bspatafora.helpers" />
       <recent name="com.bspatafora.cobspec" />
       <recent name="com.bspatafora.handlers_tests" />
       <recent name="com.bspatafora.java_server_tests" />
@@ -649,7 +655,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -667,8 +673,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14027777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2133646" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14027777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2133646" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -702,20 +708,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/com/bspatafora/core/WorkerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="675">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/core/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/core/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="555">
@@ -770,13 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48989114" vertical-offset="0" max-vertical-offset="643">
           <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/Router.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -862,34 +847,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImagePNG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036363635" vertical-offset="0" max-vertical-offset="825">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImageJPEG.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.036363635" vertical-offset="0" max-vertical-offset="825">
           <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImageGIF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12727273" vertical-offset="0" max-vertical-offset="825">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -922,14 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Image.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1062,14 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/ImageGIFTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38181818" vertical-offset="0" max-vertical-offset="825">
-          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/LoggerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5272727" vertical-offset="0" max-vertical-offset="825">
@@ -1082,6 +1027,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImagePNG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14545454" vertical-offset="0" max-vertical-offset="825">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/ImageGIF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/File1Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/File1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/bspatafora/cobspec/handlers/ImageGIFTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/FileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/Router.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bspatafora/cobspec/handlers/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
