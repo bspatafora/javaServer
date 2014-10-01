@@ -10,4 +10,8 @@ public class ImagePNG extends FileHandler implements Handler {
     public void setFileName() {
         fileName = "image.png";
     }
+
+    protected void get() {
+        super.get();
+    }
 }

@@ -10,4 +10,8 @@ public class File1 extends FileHandler implements Handler {
     public void setFileName() {
         fileName = "file1";
     }
+
+    protected void get() {
+        super.get();
+    }
 }

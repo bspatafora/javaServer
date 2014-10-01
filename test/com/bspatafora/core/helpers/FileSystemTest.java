@@ -1,4 +1,4 @@
-package com.bspatafora.helpers;
+package com.bspatafora.core.helpers;
 
 import org.junit.Test;
 

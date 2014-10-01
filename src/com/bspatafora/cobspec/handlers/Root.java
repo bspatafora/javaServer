@@ -1,18 +1,26 @@
 package com.bspatafora.cobspec.handlers;
 
 import com.bspatafora.core.constants.Header;
+import com.bspatafora.core.constants.Method;
 import com.bspatafora.core.constants.Status;
 import com.bspatafora.core.*;
-import com.bspatafora.helpers.FileSystem;
-import com.bspatafora.helpers.HTML;
+import com.bspatafora.core.helpers.FileSystem;
+import com.bspatafora.core.helpers.HTML;
 
 public class Root implements Handler {
+    private final Response response = new Response();
+
     public Response response(Request request) {
-        Response response = new Response();
+        if (request.method().equals(Method.GET)) {
+            get();
+        }
+        return response;
+    }
+
+    private void get() {
         response.setStatus(Status.OK);
         response.addHeader(Header.CONTENT_TYPE + Header.TEXT_HTML);
         response.setBody(body().getBytes());
-        return response;
     }
 
     private String body() {

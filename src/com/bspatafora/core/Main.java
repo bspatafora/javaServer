@@ -1,7 +1,7 @@
 package com.bspatafora.core;
 
 import com.bspatafora.cobspec.Router;
-import com.bspatafora.helpers.CommandLine;
+import com.bspatafora.core.helpers.CommandLine;
 
 class Main {
     public static void main(String[] args) {

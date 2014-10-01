@@ -10,4 +10,8 @@ public class ImageJPEG extends FileHandler implements Handler {
     public void setFileName() {
         fileName = "image.jpeg";
     }
+
+    protected void get() {
+        super.get();
+    }
 }

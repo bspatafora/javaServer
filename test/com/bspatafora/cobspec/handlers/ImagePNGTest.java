@@ -4,6 +4,7 @@ import com.bspatafora.core.Request;
 import com.bspatafora.core.Response;
 import com.bspatafora.core.Settings;
 import com.bspatafora.core.constants.Header;
+import com.bspatafora.core.constants.Method;
 import com.bspatafora.core.constants.Status;
 import org.junit.Test;
 
@@ -14,17 +15,20 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ImagePNGTest {
-    private static final Request emptyRequest = new Request();
+    private static final Request getRequest = new Request();
+    static {
+        getRequest.setMethod(Method.GET);
+    }
 
     @Test
     public void responseStatus() throws Exception {
-        Response response = new ImagePNG().response(emptyRequest);
+        Response response = new ImagePNG().response(getRequest);
         assertEquals("Status is '200 OK'", Status.OK, response.status());
     }
 
     @Test
     public void responseContentTypeHeader() throws Exception {
-        Response response = new ImagePNG().response(emptyRequest);
+        Response response = new ImagePNG().response(getRequest);
         assertTrue("Content type header is set to 'image/png'", response.headers().contains(Header.CONTENT_TYPE + Header.IMAGE_PNG));
     }
 
@@ -32,7 +36,7 @@ public class ImagePNGTest {
     public void responseBody() throws Exception {
         File file = new File(Settings.directory + "image.png");
         byte[] image = Files.readAllBytes(file.toPath());
-        Response response = new ImagePNG().response(emptyRequest);
+        Response response = new ImagePNG().response(getRequest);
         assertEquals("Body is CobSpec’s image.png", new String(image), new String(response.body()));
     }
 }

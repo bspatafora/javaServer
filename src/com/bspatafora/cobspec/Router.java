@@ -23,6 +23,7 @@ public class Router implements Handler {
         routes.put("/these", new Logger());
         routes.put("/requests", new Logger());
         routes.put("/file1", new File1());
+        routes.put("/method_options", new MethodOptions());
     }
 
     public Response response(Request request) {

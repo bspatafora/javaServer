@@ -1,22 +1,23 @@
 package com.bspatafora.cobspec.handlers;
 
-import com.bspatafora.core.constants.Header;
-import com.bspatafora.core.constants.Method;
-import com.bspatafora.core.constants.Status;
-import com.bspatafora.cobspec.Resources;
 import com.bspatafora.core.Handler;
 import com.bspatafora.core.Request;
 import com.bspatafora.core.Response;
+import com.bspatafora.core.constants.Header;
+import com.bspatafora.core.constants.Method;
+import com.bspatafora.core.constants.Status;
+import com.bspatafora.core.helpers.HTTP;
 
-public class Form implements Handler {
+public class MethodOptions implements Handler {
     private final Response response = new Response();
-    private Request request;
 
     public Response response(Request request) {
-        this.request = request;
         switch (request.method()) {
             case Method.GET:
                 get();
+                break;
+            case Method.HEAD:
+                head();
                 break;
             case Method.POST:
                 post();
@@ -24,8 +25,8 @@ public class Form implements Handler {
             case Method.PUT:
                 put();
                 break;
-            case Method.DELETE:
-                delete();
+            case Method.OPTIONS:
+                options();
                 break;
         }
         return response;
@@ -33,22 +34,22 @@ public class Form implements Handler {
 
     private void get() {
         response.setStatus(Status.OK);
-        response.addHeader(Header.CONTENT_TYPE + Header.TEXT_HTML);
-        response.setBody(Resources.form_resource.getBytes());
+    }
+
+    private void head() {
+        response.setStatus(Status.OK);
     }
 
     private void post() {
         response.setStatus(Status.OK);
-        Resources.form_resource = request.body();
     }
 
     private void put() {
         response.setStatus(Status.OK);
-        Resources.form_resource = request.body();
     }
 
-    private void delete() {
+    private void options() {
         response.setStatus(Status.OK);
-        Resources.form_resource = "";
+        response.addHeader(Header.ALLOW + HTTP.allowedMethods(MethodOptions.class));
     }
 }

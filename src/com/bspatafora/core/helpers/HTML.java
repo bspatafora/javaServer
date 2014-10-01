@@ -1,4 +1,4 @@
-package com.bspatafora.helpers;
+package com.bspatafora.core.helpers;
 
 public class HTML {
     public static String link(String address, String name) {

@@ -10,4 +10,8 @@ public class ImageGIF extends FileHandler implements Handler {
     public void setFileName() {
         fileName = "image.gif";
     }
+
+    protected void get() {
+        super.get();
+    }
 }

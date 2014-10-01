@@ -1,4 +1,4 @@
-package com.bspatafora.helpers;
+package com.bspatafora.core.helpers;
 
 public class Stream {
     public static String toString(java.io.InputStream inputStream) {
