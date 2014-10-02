@@ -8,10 +8,15 @@ import com.bspatafora.core.Response;
 import java.util.HashMap;
 
 public class Router implements Handler {
-    private static final HashMap<String, Handler> routes;
-    static
-    {
-        routes = new HashMap<>();
+    private final HashMap<String, Handler> routes = routes();
+
+    public Response response(Request request) {
+        Handler handler = routes.getOrDefault(request.route(), new Unregistered());
+        return handler.response(request);
+    }
+
+    private HashMap<String, Handler> routes() {
+        HashMap<String, Handler> routes = new HashMap<>();
         routes.put("/", new Root());
         routes.put("/form", new Form());
         routes.put("/redirect", new Redirect());
@@ -24,11 +29,6 @@ public class Router implements Handler {
         routes.put("/requests", new Logger());
         routes.put("/file1", new File1());
         routes.put("/method_options", new MethodOptions());
-    }
-
-    public Response response(Request request) {
-        Handler notFound = new Unregistered();
-        Handler handler = routes.getOrDefault(request.route(), notFound);
-        return handler.response(request);
+        return routes;
     }
 }

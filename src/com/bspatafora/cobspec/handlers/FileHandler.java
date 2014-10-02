@@ -22,6 +22,7 @@ abstract class FileHandler {
     public Response response(Request request) {
         setContentType();
         setFileName();
+
         if (request.method().equals(Method.GET)) {
             get();
         }

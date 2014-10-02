@@ -8,12 +8,12 @@ import java.util.concurrent.Executors;
 
 class Server implements Runnable {
     private final int port;
-    private final Handler router;
+    private final RouterFactory routerFactory;
     private final Boolean multiThreaded;
 
-    public Server(int port, Handler router, Boolean multiThreaded) {
+    public Server(int port, RouterFactory routerFactory, Boolean multiThreaded) {
         this.port = port;
-        this.router = router;
+        this.routerFactory = routerFactory;
         this.multiThreaded = multiThreaded;
     }
 
@@ -23,10 +23,10 @@ class Server implements Runnable {
             Executor threadPool = Executors.newFixedThreadPool(5);
             while (multiThreaded) {
                 Socket socket = serverSocket.accept();
-                threadPool.execute(new Worker(socket, router));
+                threadPool.execute(new Worker(socket, routerFactory.buildRouter()));
             }
             while (!multiThreaded) {
-                new Worker(serverSocket.accept(), router).run();
+                new Worker(serverSocket.accept(), routerFactory.buildRouter()).run();
             }
         }
         catch (IOException e) {

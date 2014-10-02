@@ -8,11 +8,10 @@ import java.util.StringTokenizer;
 
 class RequestFactory {
     private final BufferedReader in;
-    private final Request request;
+    private final Request request = new Request();
 
     public RequestFactory(BufferedReader in) {
         this.in = in;
-        this.request = new Request();
     }
 
     public Request build() {

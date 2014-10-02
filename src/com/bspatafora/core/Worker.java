@@ -1,7 +1,6 @@
 package com.bspatafora.core;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.bspatafora.core.helpers.Logger;
 
 import java.io.*;
 import java.net.Socket;
@@ -12,12 +11,11 @@ import java.util.Calendar;
 class Worker implements Runnable {
     private final Socket socket;
     private final Handler router;
-    private final Logger logger;
+    private final Logger logger = Settings.LOGGER;
 
     public Worker(Socket socket, Handler router) {
         this.socket = socket;
         this.router = router;
-        this.logger = LogManager.getLogger();
     }
 
     public void run() {
@@ -26,28 +24,20 @@ class Worker implements Runnable {
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
             long startTime = System.nanoTime();
-            logger.info(requestReceived());
+            logger.requestReceived(currentTimeStamp());
 
             Request request = new RequestFactory(in).build();
-            logger.info(request.requestString());
+            logger.request(request.requestString());
 
             Response response = router.response(request);
             textOut.write(response.head());
             textOut.flush();
             byteOut.write(response.body());
-            logger.info(responseTime(startTime));
+            logger.responseTime(elapsedTime(startTime));
         }
         catch (IOException e) {
             System.err.println(e.getMessage());
         }
-    }
-
-    private String responseTime(long startTime) {
-        return "Response took " + elapsedTime(startTime) + " milliseconds\n";
-    }
-
-    private String requestReceived() {
-        return "Request received " + currentTimeStamp() + ":\n";
     }
 
     private double elapsedTime(long startTime) {

@@ -1,6 +1,6 @@
 package com.bspatafora.core;
 
-import com.bspatafora.cobspec.Router;
+import com.bspatafora.cobspec.RouterFactory;
 import com.bspatafora.core.constants.Header;
 import com.bspatafora.core.constants.Status;
 import com.bspatafora.core.helpers.Stream;
@@ -26,8 +26,8 @@ public class WorkerTest {
 
     @BeforeClass
     public static void startServers() {
-        new Thread(new Server(multiThreadedPort, new Router(), true)).start();
-        new Thread(new Server(singleThreadedPort, new Router(), false)).start();
+        new Thread(new Server(multiThreadedPort, new RouterFactory(), true)).start();
+        new Thread(new Server(singleThreadedPort, new RouterFactory(), false)).start();
     }
 
     @Test

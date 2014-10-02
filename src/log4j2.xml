@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-    <!--<Properties>-->
-        <!--<Property name="Log4jContextSelector">org.apache.logging.log4j.core.async.AsyncLoggerContextSelector</Property>-->
-    <!--</Properties>-->
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%msg%n"/>
         </Console>
-        <!--<File name="File" fileName="/Users/ben/Dropbox/dev/java_server.log">-->
-            <!--<PatternLayout>-->
-                <!--<Pattern>%msg%n</Pattern>-->
-            <!--</PatternLayout>-->
-        <!--</File>-->
+        <File name="File" fileName="/Users/ben/Dropbox/dev/java_server.log">
+            <PatternLayout>
+                <Pattern>%msg%n</Pattern>
+            </PatternLayout>
+        </File>
     </Appenders>
     <Loggers>
         <Root level="info">
             <AppenderRef ref="Console"/>
-            <!--<AppenderRef ref="File"/>-->
+            <AppenderRef ref="File"/>
         </Root>
     </Loggers>
 </Configuration>
