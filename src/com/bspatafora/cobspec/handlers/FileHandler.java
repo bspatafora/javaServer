@@ -6,6 +6,7 @@ import com.bspatafora.core.Settings;
 import com.bspatafora.core.constants.Header;
 import com.bspatafora.core.constants.Method;
 import com.bspatafora.core.constants.Status;
+import com.bspatafora.core.helpers.HTTP;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +26,8 @@ abstract class FileHandler {
 
         if (request.method().equals(Method.GET)) {
             get();
+        } else {
+            not_allowed();
         }
         return response;
     }
@@ -39,5 +42,10 @@ abstract class FileHandler {
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
+    }
+
+    void not_allowed() {
+        response.setStatus(Status.NOT_ALLOWED);
+        response.addHeader(Header.ALLOW + HTTP.allowedMethods(FileHandler.class));
     }
 }

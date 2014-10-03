@@ -29,6 +29,7 @@ public class Router implements Handler {
         routes.put("/requests", new Logger());
         routes.put("/file1", new File1());
         routes.put("/method_options", new MethodOptions());
+        routes.put("/text-file.txt", new TextFileTXT());
         return routes;
     }
 }

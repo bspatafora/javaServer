@@ -6,4 +6,5 @@ public class Status {
     public static final String NOT_FOUND = "404 Not Found\r\n";
     public static final String MOVED_PERMANENTLY = "301 Moved Permanently\r\n";
     public static final String UNAUTHORIZED = "401 Unauthorized\r\n";
+    public static final String NOT_ALLOWED = "405 Method Not Allowed\r\n";
 }
