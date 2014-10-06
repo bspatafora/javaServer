@@ -4,11 +4,9 @@ import com.bspatafora.core.Handler;
 import com.bspatafora.core.constants.Header;
 
 public class File1 extends FileHandler implements Handler {
-    public void setContentType() {
-        contentType = Header.TEXT_HTML;
-    }
-    public void setFileName() {
-        fileName = "file1";
+    public File1() {
+        setContentType(Header.TEXT_HTML);
+        setFileName("file1");
     }
 
     protected void get() {

@@ -17,13 +17,15 @@ abstract class FileHandler {
     String fileName;
     private final Response response = new Response();
 
-    protected abstract void setContentType();
-    protected abstract void setFileName();
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
     public Response response(Request request) {
-        setContentType();
-        setFileName();
-
         if (request.method().equals(Method.GET)) {
             get();
         } else {

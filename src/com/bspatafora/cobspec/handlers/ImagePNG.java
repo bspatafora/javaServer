@@ -4,11 +4,9 @@ import com.bspatafora.core.Handler;
 import com.bspatafora.core.constants.Header;
 
 public class ImagePNG extends FileHandler implements Handler {
-    public void setContentType() {
-        contentType = Header.IMAGE_PNG;
-    }
-    public void setFileName() {
-        fileName = "image.png";
+    public ImagePNG() {
+        setContentType(Header.IMAGE_PNG);
+        setFileName("image.png");
     }
 
     protected void get() {
