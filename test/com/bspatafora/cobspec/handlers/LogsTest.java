@@ -42,9 +42,9 @@ public class LogsTest {
 
     @Test
     public void responseBodyWhenAuthenticated() throws Exception {
-        Resources.logs_resource.add("A logged request");
+        Resources.logsResource.add("A logged request");
 
         Response response = new Logs().response(authorizedRequest);
-        assertEquals("Body contains log resource when authenticated", Resources.logs_resource.toString(), new String(response.body()));
+        assertEquals("Body contains log resource when authenticated", Resources.logsResource.toString(), new String(response.body()));
     }
 }

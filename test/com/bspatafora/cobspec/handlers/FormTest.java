@@ -50,7 +50,7 @@ public class FormTest {
 
     @Test
     public void responseBodyWhenGET() throws Exception {
-        Resources.form_resource = cosby;
+        Resources.formResource = cosby;
 
         Response response = new Form().response(getRequest);
         assertEquals("Body is whatever is stored in the form resource when GET", cosby, new String(response.body()));
@@ -59,16 +59,16 @@ public class FormTest {
     @Test
     public void updateResource() throws Exception {
         new Form().response(postCosbyRequest);
-        assertEquals("Form resource is updated with request body when POST", cosby, Resources.form_resource);
+        assertEquals("Form resource is updated with request body when POST", cosby, Resources.formResource);
         new Form().response(putHeathcliffRequest);
-        assertEquals("Form resource is updated with request body when PUT", heathcliff, Resources.form_resource);
+        assertEquals("Form resource is updated with request body when PUT", heathcliff, Resources.formResource);
     }
 
     @Test
     public void deleteResource() throws Exception {
-        Resources.form_resource = cosby;
+        Resources.formResource = cosby;
 
         new Form().response(deleteRequest);
-        assertEquals("Form resource is deleted", "", Resources.form_resource);
+        assertEquals("Form resource is deleted", "", Resources.formResource);
     }
 }

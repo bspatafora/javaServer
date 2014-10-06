@@ -24,7 +24,7 @@ public class Logs implements Handler {
     private void get() {
         if (authorized(request.credentials())) {
             response.setStatus(Status.OK);
-            response.setBody(Resources.logs_resource.toString().getBytes());
+            response.setBody(Resources.logsResource.toString().getBytes());
         } else {
             response.setStatus(Status.UNAUTHORIZED);
             response.setBody("Authentication required".getBytes());

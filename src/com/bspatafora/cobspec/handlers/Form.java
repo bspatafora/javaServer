@@ -34,21 +34,21 @@ public class Form implements Handler {
     private void get() {
         response.setStatus(Status.OK);
         response.addHeader(Header.CONTENT_TYPE + Header.TEXT_HTML);
-        response.setBody(Resources.form_resource.getBytes());
+        response.setBody(Resources.formResource.getBytes());
     }
 
     private void post() {
         response.setStatus(Status.OK);
-        Resources.form_resource = request.body();
+        Resources.formResource = request.body();
     }
 
     private void put() {
         response.setStatus(Status.OK);
-        Resources.form_resource = request.body();
+        Resources.formResource = request.body();
     }
 
     private void delete() {
         response.setStatus(Status.OK);
-        Resources.form_resource = "";
+        Resources.formResource = "";
     }
 }

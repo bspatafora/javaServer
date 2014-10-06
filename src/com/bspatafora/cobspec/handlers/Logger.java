@@ -10,7 +10,7 @@ public class Logger implements Handler {
     public Response response(Request request) {
         Response response = new Response();
         response.setStatus(Status.OK);
-        Resources.logs_resource.add(request.requestString());
+        Resources.logsResource.add(request.requestString());
         return response;
     }
 }

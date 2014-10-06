@@ -12,7 +12,7 @@ public class LoggerTest {
     @Test
     public void createLog() throws Exception {
         String requestString = "GET /some_route HTTP/1.1\r\n";
-        assertFalse("Log resource does not initially contain request string", Resources.logs_resource.contains(requestString));
+        assertFalse("Log resource does not initially contain request string", Resources.logsResource.contains(requestString));
 
         Request request = new Request();
         request.setMethod(Method.GET);
@@ -20,7 +20,7 @@ public class LoggerTest {
         request.setProtocolVersion(Status.HTTP11);
 
         new Logger().response(request);
-        assertTrue("Log resource contains request string of passed request", Resources.logs_resource.contains(requestString));
+        assertTrue("Log resource contains request string of passed request", Resources.logsResource.contains(requestString));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class LoggerTest {
 
         new Logger().response(requestTwo);
 
-        assertTrue("Log resource contains request string of first passed request", Resources.logs_resource.contains(requestOneString));
-        assertTrue("Log resource contains request string of second passed request", Resources.logs_resource.contains(requestTwoString));
+        assertTrue("Log resource contains request string of first passed request", Resources.logsResource.contains(requestOneString));
+        assertTrue("Log resource contains request string of second passed request", Resources.logsResource.contains(requestTwoString));
     }
 }
