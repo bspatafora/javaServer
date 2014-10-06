@@ -6,6 +6,7 @@ import com.bspatafora.core.constants.Status;
 import com.bspatafora.core.*;
 import com.bspatafora.core.helpers.FileSystem;
 import com.bspatafora.core.helpers.HTML;
+import com.bspatafora.core.helpers.HTTP;
 
 public class Root implements Handler {
     private final Response response = new Response();
@@ -13,6 +14,8 @@ public class Root implements Handler {
     public Response response(Request request) {
         if (request.method().equals(Method.GET)) {
             get();
+        } else if (request.method().equals(Method.OPTIONS)) {
+            options();
         }
         return response;
     }
@@ -21,6 +24,11 @@ public class Root implements Handler {
         response.setStatus(Status.OK);
         response.addHeader(Header.CONTENT_TYPE + Header.TEXT_HTML);
         response.setBody(body().getBytes());
+    }
+
+    private void options() {
+        response.setStatus(Status.OK);
+        response.addHeader(Header.ALLOW + HTTP.allowedMethods(Root.class));
     }
 
     private String body() {
