@@ -13,15 +13,15 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 abstract class FileHandler {
-    String contentType;
-    String fileName;
+    private String contentType;
+    private String fileName;
     private final Response response = new Response();
 
-    public void setContentType(String contentType) {
+    void setContentType(String contentType) {
         this.contentType = contentType;
     }
 
-    public void setFileName(String fileName) {
+    void setFileName(String fileName) {
         this.fileName = fileName;
     }
 
