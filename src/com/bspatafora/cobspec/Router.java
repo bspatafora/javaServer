@@ -4,6 +4,7 @@ import com.bspatafora.cobspec.handlers.*;
 import com.bspatafora.core.Handler;
 import com.bspatafora.core.Request;
 import com.bspatafora.core.Response;
+import com.bspatafora.core.helpers.URL;
 
 import java.util.HashMap;
 
@@ -11,7 +12,8 @@ public class Router implements Handler {
     private final HashMap<String, Handler> routes = routes();
 
     public Response response(Request request) {
-        Handler handler = routes.getOrDefault(request.route(), new Unregistered());
+        String route = URL.removeParameters(request.route());
+        Handler handler = routes.getOrDefault(route, new Unregistered());
         return handler.response(request);
     }
 
@@ -30,6 +32,7 @@ public class Router implements Handler {
         routes.put("/file1", new File1());
         routes.put("/method_options", new MethodOptions());
         routes.put("/text-file.txt", new TextFileTXT());
+        routes.put("/parameters", new Parameters());
         return routes;
     }
 }
