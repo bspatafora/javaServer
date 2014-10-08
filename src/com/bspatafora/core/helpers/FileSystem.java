@@ -1,10 +1,30 @@
 package com.bspatafora.core.helpers;
 
-import java.io.File;
+import java.io.*;
+import java.nio.file.Files;
 
 public class FileSystem {
-    public static String[] fileNames(String directoryName) {
-        File directory = new File(directoryName);
-        return directory.list();
+    public static String[] directoryContents(String directoryName) {
+        return new File(directoryName).list();
+    }
+
+    public static byte[] read(File file) {
+        byte[] fileBytes = new byte[0];
+        try {
+            fileBytes = Files.readAllBytes(file.toPath());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+        return fileBytes;
+    }
+
+    public static byte[] readPartial(File file, int start, int end) {
+        byte[] fileBytes = new byte[0];
+        try {
+            fileBytes = Stream.readPartial(new FileInputStream(file), start, end);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+        return fileBytes;
     }
 }
