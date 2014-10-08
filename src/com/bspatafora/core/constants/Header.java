@@ -10,5 +10,6 @@ public class Header {
     public static final String IMAGE_PNG = "image/png";
     public static final String IMAGE_GIF = "image/gif";
     public static final String ALLOW = "Allow: ";
+    public static final String RANGE = "Range: ";
 
 }

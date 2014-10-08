@@ -33,6 +33,7 @@ public class Router implements Handler {
         routes.put("/method_options", new MethodOptions());
         routes.put("/text-file.txt", new TextFileTXT());
         routes.put("/parameters", new Parameters());
+        routes.put("/partial_content.txt", new PartialContent());
         return routes;
     }
 }

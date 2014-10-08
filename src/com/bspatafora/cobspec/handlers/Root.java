@@ -32,7 +32,7 @@ public class Root implements Handler {
     }
 
     private String body() {
-        String[] fileNames = FileSystem.fileNames(Settings.directory);
+        String[] fileNames = FileSystem.directoryContents(Settings.directory);
         StringBuilder fileLinks = new StringBuilder();
         for (String fileName : fileNames) {
             fileLinks.append(HTML.link(fileName, fileName));
