@@ -11,5 +11,6 @@ public class Header {
     public static final String IMAGE_GIF = "image/gif";
     public static final String ALLOW = "Allow: ";
     public static final String RANGE = "Range: ";
+    public static final String IF_MATCH = "If-Match: ";
 
 }

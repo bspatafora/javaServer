@@ -1,5 +1,6 @@
 package com.bspatafora.core;
 
+import com.bspatafora.core.constants.Header;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -25,6 +26,31 @@ public class RequestTest {
     @Test
     public void initializeCredentialsEmpty() throws Exception {
         assertEquals("Credentials is empty on initialization", "", new Request().credentials());
+    }
+
+    @Test
+    public void hasHeaderWhenNo() throws Exception {
+        assertFalse("False when corresponding header is not present", new Request().hasHeader(Header.CONTENT_LENGTH));
+    }
+
+    @Test
+    public void hasHeaderWhenYes() throws Exception {
+        Request requestWithContentLength = new Request();
+        requestWithContentLength.addHeader(Header.CONTENT_LENGTH + "0");
+        assertTrue("True when corresponding header is present", requestWithContentLength.hasHeader(Header.CONTENT_LENGTH));
+    }
+
+    @Test
+    public void getHeaderWhenNotPresent() throws Exception {
+        assertEquals("Returns empty string when no header matches passed header signature", "", new Request().getHeader(Header.CONTENT_LENGTH));
+    }
+
+    @Test
+    public void getHeaderWhenPresent() throws Exception {
+        Request requestWithContentLength = new Request();
+        String contentLengthHeader = Header.CONTENT_LENGTH + "0";
+        requestWithContentLength.addHeader(contentLengthHeader);
+        assertEquals("Returns header matching passed header signature when present", contentLengthHeader, requestWithContentLength.getHeader(Header.CONTENT_LENGTH));
     }
 
     @Test

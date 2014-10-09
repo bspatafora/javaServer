@@ -34,6 +34,7 @@ public class Router implements Handler {
         routes.put("/text-file.txt", new TextFileTXT());
         routes.put("/parameters", new Parameters());
         routes.put("/partial_content.txt", new PartialContent());
+        routes.put("/patch-content.txt", new PatchContentTXT());
         return routes;
     }
 }

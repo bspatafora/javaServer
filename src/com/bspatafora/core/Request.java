@@ -56,6 +56,20 @@ public class Request {
         return body;
     }
 
+    public Boolean hasHeader(String headerSignature) {
+        return !getHeader(headerSignature).isEmpty();
+    }
+
+    public String getHeader(String headerSignature) {
+        String requestedHeader = "";
+        for (String header : headers) {
+            if (header.contains(headerSignature)) {
+                requestedHeader = header;
+            }
+        }
+        return requestedHeader;
+    }
+
     public String requestString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(method);
