@@ -33,11 +33,4 @@ public class URLTest {
 
         assertEquals("Returns a parameter hash when there are two name/value pairs", urlParameters, URL.urlParameters(url));
     }
-
-    @Test
-    public void removeParameters() {
-        String url = "/route?parameters=gobyebye";
-
-        assertEquals("Returns the URL without parameters", "/route", URL.removeParameters(url));
-    }
 }

@@ -12,7 +12,7 @@ public class Router implements Handler {
     private final HashMap<String, Handler> routes = routes();
 
     public Response response(Request request) {
-        String route = URL.removeParameters(request.route());
+        String route = removeParameters(request.route());
         Handler handler = routes.getOrDefault(route, new Unregistered());
         return handler.response(request);
     }
@@ -33,8 +33,13 @@ public class Router implements Handler {
         routes.put("/method_options", new MethodOptions());
         routes.put("/text-file.txt", new TextFileTXT());
         routes.put("/parameters", new Parameters());
-        routes.put("/partial_content.txt", new PartialContent());
+        routes.put("/partial_content.txt", new PartialContentTXT());
         routes.put("/patch-content.txt", new PatchContentTXT());
         return routes;
+    }
+
+    private String removeParameters(String url){
+        String[] urlTokens = url.split("[?]");
+        return urlTokens[0];
     }
 }

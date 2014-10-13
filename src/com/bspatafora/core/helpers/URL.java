@@ -46,9 +46,4 @@ public class URL {
 
         return urlParameters;
     }
-
-    public static String removeParameters(String url) {
-        String[] urlTokens = url.split("[?]");
-        return urlTokens[0];
-    }
 }
