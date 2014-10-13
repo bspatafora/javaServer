@@ -19,7 +19,9 @@ public class HTTPTest {
 
     @Test
     public void allowedMethodsWhenGetHeadOptions() throws Exception {
-        assertEquals("Is 'GET, HEAD, OPTIONS' when class has those methods", "GET, HEAD, OPTIONS", HTTP.allowedMethods(hasGetHeadOptions.class));
+        assertTrue("Contains GET", HTTP.allowedMethods(hasGetHeadOptions.class).contains(Method.GET));
+        assertTrue("Contains HEAD", HTTP.allowedMethods(hasGetHeadOptions.class).contains(Method.HEAD));
+        assertTrue("Contains OPTIONS", HTTP.allowedMethods(hasGetHeadOptions.class).contains(Method.OPTIONS));
     }
 
     private class hasGet {
