@@ -1,4 +1,6 @@
-# JavaServer
+[![Build Status](https://travis-ci.org/bspatafora/javaServer.svg?branch=master)](https://travis-ci.org/bspatafora/javaServer)
+
+# javaServer
 
 A basic HTTP server written in Java.
 
@@ -6,17 +8,13 @@ Includes `cobspec` package for passing 8th Light’s [Cob Spec][] HTTP server ac
 
 ## Requirements
   * JDK 8
-  * [IntelliJ IDEA][]
-  * [Cob Spec][]
 
 ## Running the server
-  1. Build a JAR using IntelliJ
-      * Build > Build Artifacts... > Build
-  2. Go to the `java_server` root directory, then use `java -jar ./out/artifacts/java_server_jar/java_server.jar -p 5000 -d path/to/cob_spec/public`
+  1. Build the JAR using `gradle build` from the `javaServer` root directory
+  2. Start the server with `java -jar build/libs/javaServer.jar -p PORT -d PATH/TO/COB_SPEC/PUBLIC`
+      * If you don’t specify a port or directory, port defaults to 5000 and directory to the relative path to the Cob Spec `public` directory, included at `javaServer/src/main/resources/cobspec/`
 
 ## Running the tests
-  1. Select the “All” run/debug configuration
-  2. Hit run
+  1. Run the tests using `gradle check` from the `javaServer` root directory
 
 [Cob Spec]: https://github.com/8thlight/cob_spec
-[IntelliJ IDEA]: https://www.jetbrains.com/idea/
