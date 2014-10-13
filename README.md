@@ -8,6 +8,7 @@ Includes `cobspec` package for passing 8th Light’s [Cob Spec][] HTTP server ac
 
 ## Requirements
   * JDK 8
+  * [Gradle][]
 
 ## Running the server
   1. Build the JAR using `gradle build` from the `javaServer` root directory
@@ -18,3 +19,4 @@ Includes `cobspec` package for passing 8th Light’s [Cob Spec][] HTTP server ac
   1. Run the tests using `gradle check` from the `javaServer` root directory
 
 [Cob Spec]: https://github.com/8thlight/cob_spec
+[Gradle]: http://www.gradle.org
