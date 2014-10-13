@@ -1,5 +1,8 @@
 package main.java.javaserver.core.helpers;
 
+
+import main.java.javaserver.core.Settings;
+
 public class CommandLine {
     private int port;
     private String directory;
@@ -34,7 +37,7 @@ public class CommandLine {
     }
 
     private void defaultArguments() {
-        addArguments("5000", "/Users/ben/Dropbox/dev/cob_spec/public/");
+        addArguments(Integer.toString(Settings.port), Settings.directory);
     }
 
     private void addArguments(String port, String directory) {
