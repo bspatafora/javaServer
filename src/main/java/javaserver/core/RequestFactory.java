@@ -1,6 +1,6 @@
-package main.java.javaserver.core;
+package javaserver.core;
 
-import main.java.javaserver.core.constants.Header;
+import javaserver.core.constants.Header;
 
 import java.io.BufferedReader;
 import java.io.IOException;

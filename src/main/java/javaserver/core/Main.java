@@ -1,7 +1,7 @@
-package main.java.javaserver.core;
+package javaserver.core;
 
-import main.java.javaserver.cobspec.RouterFactory;
-import main.java.javaserver.core.helpers.CommandLine;
+import javaserver.cobspec.RouterFactory;
+import javaserver.core.helpers.CommandLine;
 
 class Main {
     public static void main(String[] args) {

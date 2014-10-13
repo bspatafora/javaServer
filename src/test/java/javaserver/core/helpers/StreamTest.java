@@ -1,6 +1,5 @@
-package test.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
-import main.java.javaserver.core.helpers.Stream;
 import org.junit.Assert;
 import org.junit.Test;
 

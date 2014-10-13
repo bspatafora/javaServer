@@ -1,6 +1,6 @@
-package main.java.javaserver.core;
+package javaserver.core;
 
-import main.java.javaserver.core.helpers.Logger;
+import javaserver.core.helpers.Logger;
 
 import java.io.*;
 import java.net.Socket;

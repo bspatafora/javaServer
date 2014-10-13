@@ -1,12 +1,11 @@
-package test.java.javaserver.cobspec.handlers;
+package javaserver.cobspec.handlers;
 
-import main.java.javaserver.cobspec.handlers.MethodOptions;
-import main.java.javaserver.core.Request;
-import main.java.javaserver.core.Response;
-import main.java.javaserver.core.constants.Header;
-import main.java.javaserver.core.constants.Method;
-import main.java.javaserver.core.constants.Status;
-import main.java.javaserver.core.helpers.HTTP;
+import javaserver.core.Request;
+import javaserver.core.Response;
+import javaserver.core.constants.Header;
+import javaserver.core.constants.Method;
+import javaserver.core.constants.Status;
+import javaserver.core.helpers.HTTP;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

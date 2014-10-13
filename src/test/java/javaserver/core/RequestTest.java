@@ -1,8 +1,6 @@
-package test.java.javaserver.core;
+package javaserver.core;
 
-import main.java.javaserver.core.Request;
-import main.java.javaserver.core.RequestFactory;
-import main.java.javaserver.core.constants.Header;
+import javaserver.core.constants.Header;
 import org.junit.Assert;
 import org.junit.Test;
 

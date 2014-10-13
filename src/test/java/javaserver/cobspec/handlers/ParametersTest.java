@@ -1,9 +1,8 @@
-package test.java.javaserver.cobspec.handlers;
+package javaserver.cobspec.handlers;
 
-import main.java.javaserver.cobspec.handlers.Parameters;
-import main.java.javaserver.core.Request;
-import main.java.javaserver.core.Response;
-import main.java.javaserver.core.constants.Method;
+import javaserver.core.Request;
+import javaserver.core.Response;
+import javaserver.core.constants.Method;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

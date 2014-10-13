@@ -1,4 +1,4 @@
-package main.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
 import org.apache.logging.log4j.LogManager;
 

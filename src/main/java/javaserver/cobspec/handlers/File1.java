@@ -1,6 +1,6 @@
-package main.java.javaserver.cobspec.handlers;
+package javaserver.cobspec.handlers;
 
-import main.java.javaserver.core.constants.Header;
+import javaserver.core.constants.Header;
 
 public class File1 extends FileHandler {
     public File1() {

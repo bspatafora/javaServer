@@ -1,4 +1,4 @@
-package main.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
 public interface Logger {
     void requestReceived(String timeStamp);

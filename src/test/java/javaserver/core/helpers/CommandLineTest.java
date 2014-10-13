@@ -1,7 +1,6 @@
-package test.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
-import main.java.javaserver.core.Settings;
-import main.java.javaserver.core.helpers.CommandLine;
+import javaserver.core.Settings;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

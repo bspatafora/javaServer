@@ -1,7 +1,6 @@
-package test.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
-import main.java.javaserver.core.constants.Method;
-import main.java.javaserver.core.helpers.HTTP;
+import javaserver.core.constants.Method;
 import org.junit.Assert;
 import org.junit.Test;
 

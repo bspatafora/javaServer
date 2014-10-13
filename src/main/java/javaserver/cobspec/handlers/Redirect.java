@@ -1,11 +1,11 @@
-package main.java.javaserver.cobspec.handlers;
+package javaserver.cobspec.handlers;
 
-import main.java.javaserver.core.Handler;
-import main.java.javaserver.core.constants.Header;
-import main.java.javaserver.core.Request;
-import main.java.javaserver.core.Response;
-import main.java.javaserver.core.constants.Method;
-import main.java.javaserver.core.constants.Status;
+import javaserver.core.Handler;
+import javaserver.core.Request;
+import javaserver.core.Response;
+import javaserver.core.constants.Header;
+import javaserver.core.constants.Method;
+import javaserver.core.constants.Status;
 
 public class Redirect implements Handler {
     private final Response response = new Response();

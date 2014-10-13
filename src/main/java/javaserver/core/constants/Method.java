@@ -1,4 +1,4 @@
-package main.java.javaserver.core.constants;
+package javaserver.core.constants;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-package main.java.javaserver.cobspec;
+package javaserver.cobspec;
 
-import main.java.javaserver.cobspec.handlers.*;
-import main.java.javaserver.core.Handler;
-import main.java.javaserver.core.Request;
-import main.java.javaserver.core.Response;
+import javaserver.cobspec.handlers.*;
+import javaserver.core.Handler;
+import javaserver.core.Request;
+import javaserver.core.Response;
 
 import java.util.HashMap;
 

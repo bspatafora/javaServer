@@ -1,10 +1,9 @@
-package test.java.javaserver.core;
+package javaserver.core;
 
-import main.java.javaserver.cobspec.RouterFactory;
-import main.java.javaserver.core.Server;
-import main.java.javaserver.core.constants.Header;
-import main.java.javaserver.core.constants.Status;
-import main.java.javaserver.core.helpers.Stream;
+import javaserver.cobspec.RouterFactory;
+import javaserver.core.constants.Header;
+import javaserver.core.constants.Status;
+import javaserver.core.helpers.Stream;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

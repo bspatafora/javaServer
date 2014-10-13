@@ -1,4 +1,4 @@
-package main.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
 public class HTML {
     public static String link(String address, String name) {

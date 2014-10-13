@@ -1,4 +1,4 @@
-package main.java.javaserver.core.constants;
+package javaserver.core.constants;
 
 public class Header {
     public static final String CONTENT_LENGTH = "Content-Length: ";

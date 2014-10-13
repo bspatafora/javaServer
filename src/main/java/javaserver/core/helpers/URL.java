@@ -1,4 +1,4 @@
-package main.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
 import java.util.HashMap;
 import java.util.Map;

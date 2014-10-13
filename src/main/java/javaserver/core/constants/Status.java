@@ -1,4 +1,4 @@
-package main.java.javaserver.core.constants;
+package javaserver.core.constants;
 
 public class Status {
     public static final String HTTP11 = "HTTP/1.1";

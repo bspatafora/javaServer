@@ -1,4 +1,4 @@
-package main.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
 import java.io.*;
 import java.nio.file.Files;

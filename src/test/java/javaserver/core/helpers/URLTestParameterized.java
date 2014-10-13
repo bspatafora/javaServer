@@ -1,6 +1,5 @@
-package test.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
-import main.java.javaserver.core.helpers.URL;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

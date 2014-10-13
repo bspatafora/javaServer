@@ -1,6 +1,6 @@
-package main.java.javaserver.core;
+package javaserver.core;
 
-import main.java.javaserver.core.constants.Status;
+import javaserver.core.constants.Status;
 
 import java.util.ArrayList;
 import java.util.List;

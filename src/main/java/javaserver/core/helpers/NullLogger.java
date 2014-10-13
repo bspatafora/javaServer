@@ -1,4 +1,4 @@
-package main.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
 public class NullLogger implements Logger {
     public void requestReceived(String timeStamp) {

@@ -1,10 +1,9 @@
-package test.java.javaserver.cobspec.handlers;
+package javaserver.cobspec.handlers;
 
-import main.java.javaserver.cobspec.handlers.Unregistered;
-import main.java.javaserver.core.Request;
-import main.java.javaserver.core.Response;
-import main.java.javaserver.core.constants.Header;
-import main.java.javaserver.core.constants.Status;
+import javaserver.core.Request;
+import javaserver.core.Response;
+import javaserver.core.constants.Header;
+import javaserver.core.constants.Status;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

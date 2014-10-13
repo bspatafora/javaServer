@@ -1,12 +1,15 @@
-package main.java.javaserver.cobspec.handlers;
+package javaserver.cobspec.handlers;
 
-import main.java.javaserver.core.constants.Header;
-import main.java.javaserver.core.constants.Method;
-import main.java.javaserver.core.constants.Status;
-import main.java.javaserver.core.*;
-import main.java.javaserver.core.helpers.FileSystem;
-import main.java.javaserver.core.helpers.HTML;
-import main.java.javaserver.core.helpers.HTTP;
+import javaserver.core.Handler;
+import javaserver.core.Request;
+import javaserver.core.Response;
+import javaserver.core.Settings;
+import javaserver.core.constants.Header;
+import javaserver.core.constants.Method;
+import javaserver.core.constants.Status;
+import javaserver.core.helpers.FileSystem;
+import javaserver.core.helpers.HTML;
+import javaserver.core.helpers.HTTP;
 
 public class Root implements Handler {
     private final Response response = new Response();

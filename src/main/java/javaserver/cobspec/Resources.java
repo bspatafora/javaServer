@@ -1,4 +1,4 @@
-package main.java.javaserver.cobspec;
+package javaserver.cobspec;
 
 import java.util.ArrayList;
 import java.util.List;

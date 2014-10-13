@@ -1,12 +1,12 @@
-package main.java.javaserver.cobspec.handlers;
+package javaserver.cobspec.handlers;
 
-import main.java.javaserver.core.constants.Header;
-import main.java.javaserver.core.constants.Method;
-import main.java.javaserver.core.constants.Status;
-import main.java.javaserver.cobspec.Resources;
-import main.java.javaserver.core.Handler;
-import main.java.javaserver.core.Request;
-import main.java.javaserver.core.Response;
+import javaserver.cobspec.Resources;
+import javaserver.core.Handler;
+import javaserver.core.Request;
+import javaserver.core.Response;
+import javaserver.core.constants.Header;
+import javaserver.core.constants.Method;
+import javaserver.core.constants.Status;
 
 public class Form implements Handler {
     private final Response response = new Response();

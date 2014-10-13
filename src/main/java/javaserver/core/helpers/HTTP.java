@@ -1,6 +1,6 @@
-package main.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
-import main.java.javaserver.core.constants.Method;
+import javaserver.core.constants.Method;
 
 import java.util.StringJoiner;
 

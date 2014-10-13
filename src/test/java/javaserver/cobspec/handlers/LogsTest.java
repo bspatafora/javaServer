@@ -1,11 +1,10 @@
-package test.java.javaserver.cobspec.handlers;
+package javaserver.cobspec.handlers;
 
-import main.java.javaserver.cobspec.handlers.Logs;
-import main.java.javaserver.core.Request;
-import main.java.javaserver.core.Response;
-import main.java.javaserver.core.constants.Method;
-import main.java.javaserver.core.constants.Status;
-import main.java.javaserver.cobspec.Resources;
+import javaserver.cobspec.Resources;
+import javaserver.core.Request;
+import javaserver.core.Response;
+import javaserver.core.constants.Method;
+import javaserver.core.constants.Status;
 import org.junit.Test;
 
 import java.util.Base64;

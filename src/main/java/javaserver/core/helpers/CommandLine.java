@@ -1,7 +1,7 @@
-package main.java.javaserver.core.helpers;
+package javaserver.core.helpers;
 
 
-import main.java.javaserver.core.Settings;
+import javaserver.core.Settings;
 
 public class CommandLine {
     private int port;
