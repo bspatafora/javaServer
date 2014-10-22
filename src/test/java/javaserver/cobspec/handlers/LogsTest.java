@@ -24,19 +24,19 @@ public class LogsTest {
 
     @Test
     public void responseStatusUnauthorizedWhenNotAuthenticated() throws Exception {
-        Response response = new Logs().response(unauthorizedRequest);
+        Response response = new Logs(unauthorizedRequest).response();
         assertEquals("Status is '401 Unauthorized' when not authenticated", Status.UNAUTHORIZED, response.status());
     }
 
     @Test
     public void responseBodyWhenNotAuthenticated() throws Exception {
-        Response response = new Logs().response(unauthorizedRequest);
+        Response response = new Logs(unauthorizedRequest).response();
         assertEquals("Body is 'Authentication required' when not authenticated", "Authentication required", new String(response.body()));
     }
 
     @Test
     public void responseStatusOKWhenAuthenticated() throws Exception {
-        Response response = new Logs().response(authorizedRequest);
+        Response response = new Logs(authorizedRequest).response();
         assertEquals("Status is '200 OK' when authenticated", Status.OK, response.status());
     }
 
@@ -44,7 +44,7 @@ public class LogsTest {
     public void responseBodyWhenAuthenticated() throws Exception {
         Resources.logsResource.add("A logged request");
 
-        Response response = new Logs().response(authorizedRequest);
+        Response response = new Logs(authorizedRequest).response();
         assertEquals("Body contains log resource when authenticated", Resources.logsResource.toString(), new String(response.body()));
     }
 }

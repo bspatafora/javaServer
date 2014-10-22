@@ -13,8 +13,13 @@ import javaserver.core.helpers.HTTP;
 
 public class Root implements Handler {
     private final Response response = new Response();
+    private final Request request;
 
-    public Response response(Request request) {
+    public Root(Request request) {
+        this.request = request;
+    }
+
+    public Response response() {
         if (request.method().equals(Method.GET)) {
             get();
         } else if (request.method().equals(Method.OPTIONS)) {

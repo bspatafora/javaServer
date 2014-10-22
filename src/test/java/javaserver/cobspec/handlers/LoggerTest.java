@@ -19,7 +19,7 @@ public class LoggerTest {
         request.setRoute("/some_route");
         request.setProtocolVersion(Status.HTTP11);
 
-        new Logger().response(request);
+        new Logger(request).response();
         assertTrue("Log resource contains request string of passed request", Resources.logsResource.contains(requestString));
     }
 
@@ -33,14 +33,14 @@ public class LoggerTest {
         requestOne.setRoute("/foo");
         requestOne.setProtocolVersion(Status.HTTP11);
 
-        new Logger().response(requestOne);
+        new Logger(requestOne).response();
 
         Request requestTwo = new Request();
         requestTwo.setMethod(Method.DELETE);
         requestTwo.setRoute("/bar");
         requestTwo.setProtocolVersion(Status.HTTP11);
 
-        new Logger().response(requestTwo);
+        new Logger(requestTwo).response();
 
         assertTrue("Log resource contains request string of first passed request", Resources.logsResource.contains(requestOneString));
         assertTrue("Log resource contains request string of second passed request", Resources.logsResource.contains(requestTwoString));

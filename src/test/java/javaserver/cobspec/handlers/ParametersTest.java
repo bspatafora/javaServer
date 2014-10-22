@@ -19,7 +19,7 @@ public class ParametersTest {
         String decodedParameterPair1 = "variable_1 = Operators <, >, =, !=; +, -, *, &, @, #, $, [, ]: \"is that all\"?";
         String decodedParameterPair2 = "variable_2 = stuff";
 
-        Response response = new Parameters().response(queryStringGETRequest);
+        Response response = new Parameters(queryStringGETRequest).response();
         assertTrue("Body contains the first decoded parameter pair", new String(response.body()).contains(decodedParameterPair1));
         assertTrue("Body contains the second decoded parameter pair", new String(response.body()).contains(decodedParameterPair2));
     }

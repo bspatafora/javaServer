@@ -10,8 +10,13 @@ import javaserver.core.helpers.HTTP;
 
 public class MethodOptions implements Handler {
     private final Response response = new Response();
+    private final Request request;
 
-    public Response response(Request request) {
+    public MethodOptions(Request request) {
+        this.request = request;
+    }
+
+    public Response response() {
         switch (request.method()) {
             case Method.GET:
                 get();

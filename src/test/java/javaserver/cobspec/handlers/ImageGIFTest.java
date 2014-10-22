@@ -24,13 +24,13 @@ public class ImageGIFTest {
 
     @Test
     public void responseStatusWhenGET() throws Exception {
-        Response response = new ImageGIF().response(getRequest);
+        Response response = new ImageGIF(getRequest).response();
         assertEquals("Status is '200 OK'", Status.OK, response.status());
     }
 
     @Test
     public void responseContentTypeHeaderWhenGET() throws Exception {
-        Response response = new ImageGIF().response(getRequest);
+        Response response = new ImageGIF(getRequest).response();
         assertTrue("Content type header is set to 'image/gif'", response.headers().contains(Header.CONTENT_TYPE + Header.IMAGE_GIF));
     }
 
@@ -38,19 +38,19 @@ public class ImageGIFTest {
     public void responseBodyWhenGET() throws Exception {
         File file = new File(Settings.directory + "image.gif");
         byte[] image = Files.readAllBytes(file.toPath());
-        Response response = new ImageGIF().response(getRequest);
+        Response response = new ImageGIF(getRequest).response();
         assertEquals("Body is CobSpec’s image.gif", new String(image), new String(response.body()));
     }
 
     @Test
     public void responseStatusWhenNotAllowed() throws Exception {
-        Response response = new ImageGIF().response(notAllowedRequest);
+        Response response = new ImageGIF(notAllowedRequest).response();
         assertEquals("Status is '405 Method Not Allowed'", Status.NOT_ALLOWED, response.status());
     }
 
     @Test
     public void responseAllowedHeaderWhenNotAllowed() throws Exception {
-        Response response = new ImageGIF().response(notAllowedRequest);
+        Response response = new ImageGIF(notAllowedRequest).response();
         assertTrue("Allowed header is set and indicates GET", response.headers().contains(Header.ALLOW + "GET"));
     }
 }

@@ -19,6 +19,10 @@ abstract class FileHandler implements Handler {
     private final Response response = new Response();
     private Request request;
 
+    public FileHandler(Request request) {
+        this.request = request;
+    }
+
     void setContentType(String contentType) {
         this.contentType = contentType;
     }
@@ -27,8 +31,7 @@ abstract class FileHandler implements Handler {
         this.fileName = fileName;
     }
 
-    public Response response(Request request) {
-        this.request = request;
+    public Response response() {
         this.filePath = Settings.directory + fileName;
         if (request.method().equals(Method.GET)) {
             get();

@@ -33,10 +33,10 @@ public class FormTest {
 
     @Test
     public void responseStatus() throws Exception {
-        Response getResponse = new Form().response(getRequest);
-        Response postResponse = new Form().response(postCosbyRequest);
-        Response putResponse = new Form().response(putHeathcliffRequest);
-        Response deleteResponse = new Form().response(deleteRequest);
+        Response getResponse = new Form(getRequest).response();
+        Response postResponse = new Form(postCosbyRequest).response();
+        Response putResponse = new Form(putHeathcliffRequest).response();
+        Response deleteResponse = new Form(deleteRequest).response();
         assertEquals("Status is '200 OK' when GET", Status.OK, getResponse.status());
         assertEquals("Status is '200 OK' when POST", Status.OK, postResponse.status());
         assertEquals("Status is '200 OK' when PUT", Status.OK, putResponse.status());
@@ -45,7 +45,7 @@ public class FormTest {
 
     @Test
     public void responseContentTypeHeaderWhenGET() throws Exception {
-        Response response = new Form().response(getRequest);
+        Response response = new Form(getRequest).response();
         assertTrue("Content type header is set to 'text/html' when GET", response.headers().contains(Header.CONTENT_TYPE + Header.TEXT_HTML));
     }
 
@@ -53,15 +53,15 @@ public class FormTest {
     public void responseBodyWhenGET() throws Exception {
         Resources.formResource = cosby;
 
-        Response response = new Form().response(getRequest);
+        Response response = new Form(getRequest).response();
         assertEquals("Body is whatever is stored in the form resource when GET", cosby, new String(response.body()));
     }
 
     @Test
     public void updateResource() throws Exception {
-        new Form().response(postCosbyRequest);
+        new Form(postCosbyRequest).response();
         assertEquals("Form resource is updated with request body when POST", cosby, Resources.formResource);
-        new Form().response(putHeathcliffRequest);
+        new Form(putHeathcliffRequest).response();
         assertEquals("Form resource is updated with request body when PUT", heathcliff, Resources.formResource);
     }
 
@@ -69,7 +69,7 @@ public class FormTest {
     public void deleteResource() throws Exception {
         Resources.formResource = cosby;
 
-        new Form().response(deleteRequest);
+        new Form(deleteRequest).response();
         assertEquals("Form resource is deleted", "", Resources.formResource);
     }
 }

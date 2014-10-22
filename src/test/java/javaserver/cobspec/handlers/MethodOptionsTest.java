@@ -30,11 +30,11 @@ public class MethodOptionsTest {
 
     @Test
     public void responseStatus() throws Exception {
-        Response getResponse = new MethodOptions().response(getRequest);
-        Response headResponse = new MethodOptions().response(headRequest);
-        Response postResponse = new MethodOptions().response(postRequest);
-        Response putResponse = new MethodOptions().response(putRequest);
-        Response optionsResponse = new MethodOptions().response(optionsRequest);
+        Response getResponse = new MethodOptions(getRequest).response();
+        Response headResponse = new MethodOptions(headRequest).response();
+        Response postResponse = new MethodOptions(postRequest).response();
+        Response putResponse = new MethodOptions(putRequest).response();
+        Response optionsResponse = new MethodOptions(optionsRequest).response();
         assertEquals("Status is '200 OK' when GET", Status.OK, getResponse.status());
         assertEquals("Status is '200 OK' when HEAD", Status.OK, headResponse.status());
         assertEquals("Status is '200 OK' when POST", Status.OK, postResponse.status());
@@ -44,7 +44,7 @@ public class MethodOptionsTest {
 
     @Test
     public void responseAllowHeaderWhenOPTIONS() throws Exception {
-        Response optionsResponse = new MethodOptions().response(optionsRequest);
+        Response optionsResponse = new MethodOptions(optionsRequest).response();
         assertTrue("Status is '200 OK' when OPTIONS", optionsResponse.headers().contains(Header.ALLOW + HTTP.allowedMethods(MethodOptions.class)));
     }
 }

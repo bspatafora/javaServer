@@ -23,13 +23,13 @@ public class TextFileTXTTest {
 
     @Test
     public void responseStatusWhenGET() throws Exception {
-        Response response = new TextFileTXT().response(getRequest);
+        Response response = new TextFileTXT(getRequest).response();
         assertEquals("Status is '200 OK'", Status.OK, response.status());
     }
 
     @Test
     public void responseContentTypeHeaderWhenGET() throws Exception {
-        Response response = new TextFileTXT().response(getRequest);
+        Response response = new TextFileTXT(getRequest).response();
         assertTrue("Content type header is set to 'text/html'", response.headers().contains(Header.CONTENT_TYPE + Header.TEXT_HTML));
     }
 
@@ -37,19 +37,19 @@ public class TextFileTXTTest {
     public void responseBodyWhenGET() throws Exception {
         File file = new File(Settings.directory + "text-file.txt");
         byte[] fileBytes = Files.readAllBytes(file.toPath());
-        Response response = new TextFileTXT().response(getRequest);
+        Response response = new TextFileTXT(getRequest).response();
         assertEquals("Body is CobSpec’s text-file.txt contents", new String(fileBytes), new String(response.body()));
     }
 
     @Test
     public void responseStatusWhenNotAllowed() throws Exception {
-        Response response = new TextFileTXT().response(notAllowedRequest);
+        Response response = new TextFileTXT(notAllowedRequest).response();
         assertEquals("Status is '405 Method Not Allowed'", Status.NOT_ALLOWED, response.status());
     }
 
     @Test
     public void responseAllowedHeaderWhenNotAllowed() throws Exception {
-        Response response = new TextFileTXT().response(notAllowedRequest);
+        Response response = new TextFileTXT(notAllowedRequest).response();
         assertTrue("Allowed header is set and indicates GET", response.headers().contains(Header.ALLOW + "GET"));
     }
 }

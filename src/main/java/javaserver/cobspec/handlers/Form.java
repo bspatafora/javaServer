@@ -10,10 +10,13 @@ import javaserver.core.constants.Status;
 
 public class Form implements Handler {
     private final Response response = new Response();
-    private Request request;
+    private final Request request;
 
-    public Response response(Request request) {
+    public Form(Request request) {
         this.request = request;
+    }
+
+    public Response response() {
         switch (request.method()) {
             case Method.GET:
                 get();

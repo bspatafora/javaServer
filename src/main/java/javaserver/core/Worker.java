@@ -10,10 +10,10 @@ import java.util.Calendar;
 
 class Worker implements Runnable {
     private final Socket socket;
-    private final Handler router;
+    private final Router router;
     private final Logger logger = Settings.LOGGER;
 
-    public Worker(Socket socket, Handler router) {
+    public Worker(Socket socket, Router router) {
         this.socket = socket;
         this.router = router;
     }

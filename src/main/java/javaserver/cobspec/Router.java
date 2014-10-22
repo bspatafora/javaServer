@@ -10,18 +10,17 @@ import javaserver.core.constants.Method;
 
 import java.util.HashMap;
 
-public class Router implements Handler {
+public class Router implements javaserver.core.Router {
     private final HashMap<String, HashMap<String, Handler>> handlers = new HashMap<>();
-
-    public Router() {
-        generateHandlers();
-    }
+    private Request request;
 
     public Response response(Request request) {
+        this.request = request;
+        generateHandlers();
         String route = removeParameters(request.route());
         String method = request.method();
         Handler handler = getHandler(route, method);
-        return handler.response(request);
+        return handler.response();
     }
 
     private Handler getHandler(String route, String method) {
@@ -37,31 +36,31 @@ public class Router implements Handler {
     }
 
     private void generateHandlers() {
-        add("/", Method.GET, new Root());
-        add("/", Method.OPTIONS, new Root());
-        add("/form", Method.GET, new Form());
-        add("/form", Method.POST, new Form());
-        add("/form", Method.PUT, new Form());
-        add("/form", Method.DELETE, new Form());
-        add("/redirect", Method.GET, new Redirect());
-        add("/image.jpeg", Method.GET, new ImageJPEG());
-        add("/image.png", Method.GET, new ImagePNG());
-        add("/image.gif", Method.GET, new ImageGIF());
-        add("/logs", Method.GET, new Logs());
-        add("/log", Method.GET, new Logger());
-        add("/these", Method.PUT, new Logger());
-        add("/requests", Method.HEAD, new Logger());
-        add("/file1", Method.GET, new File1());
-        add("/method_options", Method.GET, new MethodOptions());
-        add("/method_options", Method.HEAD, new MethodOptions());
-        add("/method_options", Method.POST, new MethodOptions());
-        add("/method_options", Method.PUT, new MethodOptions());
-        add("/method_options", Method.OPTIONS, new MethodOptions());
-        add("/text-file.txt", Method.GET, new TextFileTXT());
-        add("/parameters", Method.GET, new Parameters());
-        add("/partial_content.txt", Method.GET, new PartialContentTXT());
-        add("/patch-content.txt", Method.GET, new PatchContentTXT());
-        add("/patch-content.txt", Method.PATCH, new PatchContentTXT());
+        add("/", Method.GET, new Root(request));
+        add("/", Method.OPTIONS, new Root(request));
+        add("/form", Method.GET, new Form(request));
+        add("/form", Method.POST, new Form(request));
+        add("/form", Method.PUT, new Form(request));
+        add("/form", Method.DELETE, new Form(request));
+        add("/redirect", Method.GET, new Redirect(request));
+        add("/image.jpeg", Method.GET, new ImageJPEG(request));
+        add("/image.png", Method.GET, new ImagePNG(request));
+        add("/image.gif", Method.GET, new ImageGIF(request));
+        add("/logs", Method.GET, new Logs(request));
+        add("/log", Method.GET, new Logger(request));
+        add("/these", Method.PUT, new Logger(request));
+        add("/requests", Method.HEAD, new Logger(request));
+        add("/file1", Method.GET, new File1(request));
+        add("/method_options", Method.GET, new MethodOptions(request));
+        add("/method_options", Method.HEAD, new MethodOptions(request));
+        add("/method_options", Method.POST, new MethodOptions(request));
+        add("/method_options", Method.PUT, new MethodOptions(request));
+        add("/method_options", Method.OPTIONS, new MethodOptions(request));
+        add("/text-file.txt", Method.GET, new TextFileTXT(request));
+        add("/parameters", Method.GET, new Parameters(request));
+        add("/partial_content.txt", Method.GET, new PartialContentTXT(request));
+        add("/patch-content.txt", Method.GET, new PatchContentTXT(request));
+        add("/patch-content.txt", Method.PATCH, new PatchContentTXT(request));
     }
 
     private void add(String route, String method, Handler handler) {

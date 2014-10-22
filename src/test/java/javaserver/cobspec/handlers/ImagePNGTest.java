@@ -24,13 +24,13 @@ public class ImagePNGTest {
 
     @Test
     public void responseStatusWhenGET() throws Exception {
-        Response response = new ImagePNG().response(getRequest);
+        Response response = new ImagePNG(getRequest).response();
         assertEquals("Status is '200 OK'", Status.OK, response.status());
     }
 
     @Test
     public void responseContentTypeHeaderWhenGET() throws Exception {
-        Response response = new ImagePNG().response(getRequest);
+        Response response = new ImagePNG(getRequest).response();
         assertTrue("Content type header is set to 'image/png'", response.headers().contains(Header.CONTENT_TYPE + Header.IMAGE_PNG));
     }
 
@@ -38,19 +38,19 @@ public class ImagePNGTest {
     public void responseBodyWhenGET() throws Exception {
         File file = new File(Settings.directory + "image.png");
         byte[] image = Files.readAllBytes(file.toPath());
-        Response response = new ImagePNG().response(getRequest);
+        Response response = new ImagePNG(getRequest).response();
         assertEquals("Body is CobSpec’s image.png", new String(image), new String(response.body()));
     }
 
     @Test
     public void responseStatusWhenNotAllowed() throws Exception {
-        Response response = new ImagePNG().response(notAllowedRequest);
+        Response response = new ImagePNG(notAllowedRequest).response();
         assertEquals("Status is '405 Method Not Allowed'", Status.NOT_ALLOWED, response.status());
     }
 
     @Test
     public void responseAllowedHeaderWhenNotAllowed() throws Exception {
-        Response response = new ImagePNG().response(notAllowedRequest);
+        Response response = new ImagePNG(notAllowedRequest).response();
         assertTrue("Allowed header is set and indicates GET", response.headers().contains(Header.ALLOW + "GET"));
     }
 }

@@ -14,8 +14,11 @@ public class Parameters implements Handler {
     private final Response response = new Response();
     private Request request;
 
-    public Response response(Request request) {
+    public Parameters(Request request) {
         this.request = request;
+    }
+
+    public Response response() {
         if (request.method().equals(Method.GET)) {
             get();
         }

@@ -1,5 +1,5 @@
 package javaserver.core;
 
 public interface RouterFactory {
-    Handler buildRouter();
+    Router buildRouter();
 }

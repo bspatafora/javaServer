@@ -17,13 +17,13 @@ public class RootTest {
 
     @Test
     public void responseStatus() throws Exception {
-        Response response = new Root().response(getRequest);
+        Response response = new Root(getRequest).response();
         assertEquals("Status is '200 OK'", Status.OK, response.status());
     }
 
     @Test
     public void responseContentTypeHeader() throws Exception {
-        Response response = new Root().response(getRequest);
+        Response response = new Root(getRequest).response();
         assertTrue("Content type header is set to 'text/html'", response.headers().contains(Header.CONTENT_TYPE + Header.TEXT_HTML));
     }
 
@@ -31,7 +31,7 @@ public class RootTest {
     public void responseBody() throws Exception {
         String link = "<a href=\"/text-file.txt\">text-file.txt</a></br>";
 
-        Response response = new Root().response(getRequest);
+        Response response = new Root(getRequest).response();
         assertTrue("Body contains CobSpec link", new String(response.body()).contains(link));
     }
 }

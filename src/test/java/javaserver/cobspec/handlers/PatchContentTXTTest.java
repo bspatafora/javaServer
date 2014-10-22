@@ -34,25 +34,25 @@ public class PatchContentTXTTest {
 
     @Test
     public void responseStatusWhenGET() throws Exception {
-        Response response = new PatchContentTXT().response(getRequest);
+        Response response = new PatchContentTXT(getRequest).response();
         assertEquals("Status is '200 OK'", Status.OK, response.status());
     }
 
     @Test
     public void responseContentTypeHeaderWhenGET() throws Exception {
-        Response response = new PatchContentTXT().response(getRequest);
+        Response response = new PatchContentTXT(getRequest).response();
         assertTrue("Content type header is set to 'text/html'", response.headers().contains(Header.CONTENT_TYPE + Header.TEXT_HTML));
     }
 
     @Test
     public void responseBodyWhenGET() throws Exception {
-        Response response = new PatchContentTXT().response(getRequest);
+        Response response = new PatchContentTXT(getRequest).response();
         assertEquals("Body is CobSpec’s patch-content.txt contents", resourceContents(), new String(response.body()));
     }
 
     @Test
     public void responseStatusWhenPATCH() throws Exception {
-        Response response = new PatchContentTXT().response(patchRequest);
+        Response response = new PatchContentTXT(patchRequest).response();
         assertEquals("Status is '204 No Content'", Status.NO_CONTENT, response.status());
     }
 
@@ -65,13 +65,13 @@ public class PatchContentTXTTest {
 
     @Test
     public void responseStatusWhenNotAllowed() throws Exception {
-        Response response = new PatchContentTXT().response(notAllowedRequest);
+        Response response = new PatchContentTXT(notAllowedRequest).response();
         assertEquals("Status is '405 Method Not Allowed'", Status.NOT_ALLOWED, response.status());
     }
 
     @Test
     public void responseAllowedHeaderWhenNotAllowed() throws Exception {
-        Response response = new PatchContentTXT().response(notAllowedRequest);
+        Response response = new PatchContentTXT(notAllowedRequest).response();
         assertTrue("Allowed header is set and indicates GET", response.headers().contains(Header.ALLOW + "GET"));
     }
 
@@ -95,6 +95,6 @@ public class PatchContentTXTTest {
         request.setContentLength(7);
         request.setBody(content);
 
-        new PatchContentTXT().response(request);
+        new PatchContentTXT(request).response();
     }
 }

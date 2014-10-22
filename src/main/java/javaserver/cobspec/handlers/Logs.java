@@ -11,10 +11,13 @@ import java.util.Base64;
 
 public class Logs implements Handler {
     private final Response response = new Response();
-    private Request request;
+    private final Request request;
 
-    public Response response(Request request) {
+    public Logs(Request request) {
         this.request = request;
+    }
+
+    public Response response() {
         if (request.method().equals(Method.GET)) {
             get();
         }
