@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class RequestFactory {
+class RequestFactory {
     private final BufferedReader in;
     private final Request request = new Request();
 
