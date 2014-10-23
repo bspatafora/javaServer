@@ -1,6 +1,6 @@
 package javaserver.core;
 
-import javaserver.cobspec.handlers.Unregistered;
+import javaserver.cobspec.handler.NotFound;
 import javaserver.core.constants.Status;
 import org.junit.Assert;
 import org.junit.Test;
@@ -30,9 +30,8 @@ public class ResponseTest {
     @Test
     public void head() throws Exception {
         String responseHead = "HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\n";
-        Request request = new Request();
 
-        Response response = new Unregistered().response(request);
+        Response response = new NotFound().response();
         assertEquals("Generated response head is correct", responseHead, response.head());
     }
 }
