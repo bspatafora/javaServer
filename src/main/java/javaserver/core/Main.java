@@ -10,6 +10,6 @@ class Main {
         Settings.directory = parsedArguments.directory();
 
         System.out.println("Starting server on port " + Settings.port + "...");
-        new Server(Settings.port, new RouterFactory(), true).run();
+        new Server(Settings.port, new RouterFactory()).run();
     }
 }
