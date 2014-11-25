@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
 public class RequestFactoryTest {
     private static final String getRoot = "GET / HTTP/1.1\r\n";
     private static final String postForm = "POST /form HTTP/1.0\r\nContent-Length: 10\r\n\r\ndata=cosby\r\n";
+    private static final String partial = "GET /partial_content.txt HTTP/1.1\r\nRange: bytes=0-4\r\n";
 
     @Test
     public void setMethodGET() throws Exception {
@@ -161,5 +162,27 @@ public class RequestFactoryTest {
         headers.add("Content-Length: 10");
         Request request = new RequestFactory(in).build();
         assertEquals("Built request has its headers set to its Content-Length header", headers, request.headers());
+    }
+
+    @Test
+    public void initializeStartRangeAndEndRange() throws Exception {
+        String requestString = getRoot;
+        InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+        Request request = new RequestFactory(in).build();
+        assertEquals("Built request has its rangeStart initialized to 0", 0, request.rangeStart());
+        assertEquals("Built request has its rangeEnd initialized to 0", 0, request.rangeEnd());
+    }
+
+    @Test
+    public void setStartRangeAndEndRange() throws Exception {
+        String requestString = partial;
+        InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+        Request request = new RequestFactory(in).build();
+        assertEquals("Built request has its rangeStart set to 0", 0, request.rangeStart());
+        assertEquals("Built request has its rangeEnd set to 4", 4, request.rangeEnd());
     }
 }

@@ -45,6 +45,9 @@ class RequestFactory {
                     request.setContentLength(parseContentLength(currentLine));
                 } else if (basicAuthHeader(currentLine)) {
                     request.setCredentials(parseCredentials(currentLine));
+                } else if (rangeHeader(currentLine)) {
+                    request.setRangeStart(parseRangeStart(currentLine));
+                    request.setRangeEnd(parseRangeEnd(currentLine));
                 }
             }
         } catch (IOException e) {
@@ -78,11 +81,31 @@ class RequestFactory {
         return header.substring(Header.BASIC_AUTH.length());
     }
 
+    private int parseRangeStart(String header) {
+        return characterAt(header, 13);
+    }
+
+    private int parseRangeEnd(String header) {
+        return characterAt(header, 15);
+    }
+
+    private int characterAt(String header, int index) {
+        return Character.getNumericValue(header.charAt(index));
+    }
+
     private boolean contentLengthHeader(String header) {
-        return header.startsWith(Header.CONTENT_LENGTH);
+        return isSpecifiedHeader(header, Header.CONTENT_LENGTH);
     }
 
     private boolean basicAuthHeader(String header) {
-        return header.startsWith(Header.BASIC_AUTH);
+        return isSpecifiedHeader(header, Header.BASIC_AUTH);
+    }
+
+    private boolean rangeHeader(String header) {
+        return isSpecifiedHeader(header, Header.RANGE);
+    }
+
+    private boolean isSpecifiedHeader(String actualHeader, String specifiedHeader) {
+        return actualHeader.startsWith(specifiedHeader);
     }
 }

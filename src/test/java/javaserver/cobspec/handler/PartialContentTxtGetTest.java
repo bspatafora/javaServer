@@ -11,7 +11,8 @@ import static junit.framework.TestCase.assertEquals;
 public class PartialContentTxtGetTest {
     private static final Request request = new Request();
     static {
-        request.addHeader(Header.RANGE + "bytes=0-4");
+        request.setRangeStart(0);
+        request.setRangeEnd(4);
     }
 
     @Test

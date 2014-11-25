@@ -9,6 +9,8 @@ public class Request {
     private String protocolVersion;
     private final List<String> headers = new ArrayList<>();
     private int contentLength = 0;
+    private int rangeStart = 0;
+    private int rangeEnd = 0;
     private String credentials = "";
     private String body;
 
@@ -26,6 +28,12 @@ public class Request {
     }
     public void setContentLength(int contentLength) {
         this.contentLength = contentLength;
+    }
+    public void setRangeStart(int rangeStart) {
+        this.rangeStart = rangeStart;
+    }
+    public void setRangeEnd(int rangeEnd) {
+        this.rangeEnd = rangeEnd;
     }
     public void setCredentials(String credentials) {
         this.credentials = credentials;
@@ -48,6 +56,12 @@ public class Request {
     }
     public int contentLength() {
         return contentLength;
+    }
+    public int rangeStart() {
+        return rangeStart;
+    }
+    public int rangeEnd() {
+        return rangeEnd;
     }
     public String credentials() {
         return credentials;

@@ -22,20 +22,7 @@ public class PartialContentTxtGet implements Handler {
         Response response = new Response();
         response.setStatus(Status.PARTIAL_CONTENT);
         response.addHeader(Header.CONTENT_TYPE + Header.TEXT_HTML);
-        response.setBody(FileSystem.readPartial(file, startByteIndex(), endByteIndex()));
+        response.setBody(FileSystem.readPartial(file, request.rangeStart(), request.rangeEnd()));
         return response;
-    }
-
-    private int startByteIndex() {
-        return rangeHeaderCharacterAt(13);
-    }
-
-    private int endByteIndex() {
-        return rangeHeaderCharacterAt(15);
-    }
-
-    private int rangeHeaderCharacterAt(int index) {
-        String rangeHeader = request.getHeader(Header.RANGE);
-        return Character.getNumericValue(rangeHeader.charAt(index));
     }
 }
