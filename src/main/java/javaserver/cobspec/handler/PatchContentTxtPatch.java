@@ -35,7 +35,7 @@ public class PatchContentTxtPatch implements Handler {
         Boolean matchingSHA1s = false;
         try (FileInputStream resourceContents = new FileInputStream(filePath)) {
             String resourceSHA1 = DigestUtils.sha1Hex(resourceContents);
-            matchingSHA1s = resourceSHA1.equals(requestSHA1());
+            matchingSHA1s = resourceSHA1.equals(request.ifMatch());
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
@@ -52,9 +52,5 @@ public class PatchContentTxtPatch implements Handler {
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
-    }
-
-    private String requestSHA1() {
-        return request.getHeader(Header.IF_MATCH).substring(10);
     }
 }

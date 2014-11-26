@@ -12,6 +12,7 @@ public class Request {
     private int rangeStart = 0;
     private int rangeEnd = 0;
     private String credentials = "";
+    private String ifMatch = "";
     private String body;
 
     public void setMethod(String method) {
@@ -37,6 +38,9 @@ public class Request {
     }
     public void setCredentials(String credentials) {
         this.credentials = credentials;
+    }
+    public void setIfMatch(String ifMatch) {
+        this.ifMatch = ifMatch;
     }
     public void setBody(String body) {
         this.body = body;
@@ -65,6 +69,9 @@ public class Request {
     }
     public String credentials() {
         return credentials;
+    }
+    public String ifMatch() {
+        return ifMatch;
     }
     public String body() {
         return body;

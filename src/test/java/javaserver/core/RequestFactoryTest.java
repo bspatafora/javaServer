@@ -20,6 +20,7 @@ public class RequestFactoryTest {
     private static final String getRoot = "GET / HTTP/1.1\r\n";
     private static final String postForm = "POST /form HTTP/1.0\r\nContent-Length: 10\r\n\r\ndata=cosby\r\n";
     private static final String partial = "GET /partial_content.txt HTTP/1.1\r\nRange: bytes=0-4\r\n";
+    private static final String ifMatch = "PATCH /patch-content.txt HTTP/1.1\r\nIf-Match: 60bb224c68b1ed765a0f84d910de58d0beea91c4\r\n";
 
     @Test
     public void setMethodGET() throws Exception {
@@ -113,8 +114,9 @@ public class RequestFactoryTest {
 
     @Test
     public void setCredentials() throws Exception {
-        String credentials = new String(Base64.getEncoder().encode("admin:hunter2".getBytes()));
-        String requestString = "GET / HTTP/1.1\r\nAuthorization: Basic " + credentials + "\r\n";
+        String credentials = "admin:hunter2";
+        String encodedCredentials = new String(Base64.getEncoder().encode(credentials.getBytes()));
+        String requestString = "GET / HTTP/1.1\r\nAuthorization: Basic " + encodedCredentials + "\r\n";
         InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
         BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
 
@@ -184,5 +186,25 @@ public class RequestFactoryTest {
         Request request = new RequestFactory(in).build();
         assertEquals("Built request has its rangeStart set to 0", 0, request.rangeStart());
         assertEquals("Built request has its rangeEnd set to 4", 4, request.rangeEnd());
+    }
+
+    @Test
+    public void initializeIfMatch() throws Exception {
+        String requestString = getRoot;
+        InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+        Request request = new RequestFactory(in).build();
+        assertEquals("Built request has its If-Match initialized to an empty string", "", request.ifMatch());
+    }
+
+    @Test
+    public void setIfMatch() throws Exception {
+        String requestString = ifMatch;
+        InputStream inputStream = new ByteArrayInputStream(requestString.getBytes(StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
+
+        Request request = new RequestFactory(in).build();
+        assertEquals("Built request has its If-Match set", "60bb224c68b1ed765a0f84d910de58d0beea91c4", request.ifMatch());
     }
 }

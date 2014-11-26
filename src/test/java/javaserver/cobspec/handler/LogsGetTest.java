@@ -7,8 +7,6 @@ import javaserver.core.constants.Method;
 import javaserver.core.constants.Status;
 import org.junit.Test;
 
-import java.util.Base64;
-
 import static org.junit.Assert.*;
 
 public class LogsGetTest {
@@ -19,7 +17,7 @@ public class LogsGetTest {
     private static final Request authorizedRequest = new Request();
     static {
         authorizedRequest.setMethod(Method.GET);
-        authorizedRequest.setCredentials(new String(Base64.getEncoder().encode("admin:hunter2".getBytes())));
+        authorizedRequest.setCredentials("admin:hunter2");
     }
 
     @Test

@@ -6,8 +6,6 @@ import javaserver.core.Request;
 import javaserver.core.Response;
 import javaserver.core.constants.Status;
 
-import java.util.Base64;
-
 public class LogsGet implements Handler {
     private final Response response = new Response();
     private final Request request;
@@ -36,7 +34,6 @@ public class LogsGet implements Handler {
     }
 
     private Boolean validCredentials() {
-        String requestCredentials = new String(Base64.getDecoder().decode(request.credentials()));
-        return requestCredentials.equals("admin:hunter2");
+        return request.credentials().equals("admin:hunter2");
     }
 }

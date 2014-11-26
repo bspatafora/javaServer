@@ -22,7 +22,7 @@ public class PatchContentTxtPatchTest {
     static {
         patchRequest.setMethod(Method.PATCH);
         patchRequest.setBody("default content");
-        patchRequest.addHeader(Header.IF_MATCH + defaultSHA1);
+        patchRequest.setIfMatch(defaultSHA1);
         patchRequest.setContentLength(7);
     }
 
@@ -55,7 +55,7 @@ public class PatchContentTxtPatchTest {
     private void updateResource(String sha1, String content) {
         Request request = new Request();
         request.setMethod(Method.PATCH);
-        request.addHeader(Header.IF_MATCH + sha1);
+        request.setIfMatch(sha1);
         request.setContentLength(7);
         request.setBody(content);
 
