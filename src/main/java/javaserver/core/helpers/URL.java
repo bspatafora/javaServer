@@ -36,12 +36,10 @@ public class URL {
         HashMap<String, String> urlParameters = new HashMap<>();
         String[] urlTokens = url.split("[?=&]");
 
-        int indexOfFirstParameterName = 1;
-        int nameValuepair = 2;
-        for (int i = indexOfFirstParameterName; i < urlTokens.length; i += nameValuepair) {
-            int indexOfParameterName = i;
-            int indexOfParameterValue = i + 1;
-            urlParameters.put(urlTokens[indexOfParameterName], urlTokens[indexOfParameterValue]);
+        int nameValuePair = 2;
+        for (int nameIndex = 1; nameIndex < urlTokens.length; nameIndex += nameValuePair) {
+            int valueIndex = nameIndex + 1;
+            urlParameters.put(urlTokens[nameIndex], urlTokens[valueIndex]);
         }
 
         return urlParameters;

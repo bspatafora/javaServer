@@ -2,7 +2,6 @@ package javaserver.cobspec.handler;
 
 import javaserver.core.Request;
 import javaserver.core.Response;
-import javaserver.core.constants.Header;
 import javaserver.core.constants.Status;
 import org.junit.Test;
 

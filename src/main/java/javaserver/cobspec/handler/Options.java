@@ -5,7 +5,6 @@ import javaserver.core.Handler;
 import javaserver.core.Request;
 import javaserver.core.Response;
 import javaserver.core.constants.Header;
-import javaserver.core.constants.Status;
 
 import java.util.ArrayList;
 import java.util.StringJoiner;
@@ -19,7 +18,6 @@ public class Options implements Handler {
 
     public Response response() {
         Response response = new Response();
-        response.setStatus(Status.OK);
         response.addHeader(Header.ALLOW + allowedMethods());
         return response;
     }

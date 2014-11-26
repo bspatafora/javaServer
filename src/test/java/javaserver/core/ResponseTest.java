@@ -12,6 +12,11 @@ import static org.junit.Assert.*;
 
 public class ResponseTest {
     @Test
+    public void initializeStatus200() throws Exception {
+        Assert.assertEquals("Status defaults to '200 OK'", Status.OK, new Response().status());
+    }
+
+    @Test
     public void protocolVersion() throws Exception {
         Assert.assertEquals("Protocol version is 'HTTP/1.1'", Status.HTTP11, new Response().protocolVersion());
     }

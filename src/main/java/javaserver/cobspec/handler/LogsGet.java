@@ -29,7 +29,6 @@ public class LogsGet implements Handler {
     }
 
     private void authorized() {
-        response.setStatus(Status.OK);
         response.setBody(Resources.logsResource.toString().getBytes());
     }
 

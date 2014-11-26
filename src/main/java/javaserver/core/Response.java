@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Response {
     private final String protocolVersion = Status.HTTP11;
-    private String status;
+    private String status = Status.OK;
     private final List<String> headers = new ArrayList<>();
     private byte[] body = new byte[0];
 

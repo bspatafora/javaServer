@@ -4,7 +4,6 @@ import javaserver.core.Handler;
 import javaserver.core.Request;
 import javaserver.core.Response;
 import javaserver.core.constants.Header;
-import javaserver.core.constants.Status;
 import javaserver.core.helpers.URL;
 
 import java.util.HashMap;
@@ -18,7 +17,6 @@ public class UrlParameterGet implements Handler {
 
     public Response response() {
         Response response = new Response();
-        response.setStatus(Status.OK);
         response.addHeader(Header.CONTENT_TYPE + Header.TEXT_HTML);
         response.setBody(body().getBytes());
         return response;
