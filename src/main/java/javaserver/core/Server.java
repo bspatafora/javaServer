@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-class Server implements Runnable {
+public class Server implements Runnable {
     private final int port;
     private final RouterFactory routerFactory;
 
